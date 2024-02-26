@@ -6,7 +6,7 @@ import online from "../../assets/online.png";
 import jcb from "../../assets/jcb.png";
 const Footer = () => {
     return (
-        <div>
+        <div >
             <footer className="bg-[#1b242e] w-screen pt-15 lg:pt-[90px] relative z-10 fadeInUp">
                 <div className="container">
                     <div className="flex flex-wrap -mx-4">
@@ -270,7 +270,7 @@ const Footer = () => {
                         </div>
                         <div className="w-full md:w-2/3 lg:w-6/12 xl:w-3/12 px-4">
                             <div className="w-full mb-10">
-                                <h4 className="text-white text-lg font-semibold mb-9">Hệ thống</h4>
+                                <h4 className="text-white text-lg font-semibold mb-9">Phương thức thanh toán</h4>
                                 <ul className="flex flex-wrap items-center">
                                     <li>
                                         <div
