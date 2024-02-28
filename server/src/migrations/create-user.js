@@ -20,8 +20,14 @@ module.exports = {
       email: {
         type: Sequelize.STRING
       },
-      avatar: {
+      zalo: {
         type: Sequelize.STRING
+      },
+      fbUrl: {
+        type: Sequelize.STRING
+      },
+      avatar: {
+        type: Sequelize.BLOB('long')
       },
       createdAt: {
         allowNull: false,
