@@ -1,6 +1,41 @@
 export const path = {
     HOME: '/*',
+    HOME__PAGE: ':page',
     LOGIN: 'login',
     REGISTER: 'register',
+    CHO_THUE_PHONG_TRO: 'cho-thue-phong-tro',
+    NHA_CHO_THUE: 'nha-cho-thue',
+    CHO_THUE_CAN_HO: 'cho-thue-can-ho',
+    TIN_TUC: 'tin-tuc',
+    LIEN_HE: 'lien-he',
+    DICH_VU: 'dich-vu',
+
 
 }
+export const text = {
+    HOME_TITLE: 'Luffy Land: Trải Nghiệm Tìm Trọ Dễ Dàng và Thuận Tiện',
+    HOME_DESCRIPTION: "Trang tìm trọ là nền tảng trực tuyến giúp người dùng dễ dàng tìm kiếm chỗ ở. Với giao diện thân thiện, thông tin chi tiết và tính năng liên lạc trực tuyến, trang web này kết nối hiệu quả giữa người thuê và chủ nhà, tạo ra trải nghiệm tìm trọ thuận lợi."
+}
+
+export const location = [
+    {
+        id: 'hc',
+        name: 'Phòng trọ Hải Châu',
+        image: 'https://giabaohome.vn/wp-content/uploads/2021/05/ban-nha-trung-tam-da-nang-4.jpg'
+    },
+    {
+        name: 'Phòng trọ Liên Chiểu',
+        image: 'https://dubaothoitiet.info/uploads/news-bddea0fd.jpg',
+        id: 'lc',
+    },
+    {
+        name: 'Phòng trọ Ngũ Hành Sơn',
+        image: 'https://ik.imagekit.io/tvlk/blog/2022/07/ngu-hanh-son-da-nang-1.jpg',
+        id: 'nhs',
+    },
+    {
+        name: 'Phòng trọ Cẩm Lệ',
+        image: 'https://cdn1z.reatimes.vn/mediav2/media/uploaded/27/2016/09/24/quan-cam-le-fpt.jpg',
+        id: 'cl',
+    },
+]

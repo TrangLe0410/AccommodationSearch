@@ -7,7 +7,7 @@ import jcb from "../../assets/jcb.png";
 const Footer = () => {
     return (
         <div >
-            <footer className="bg-[#1b242e] w-screen pt-15 lg:pt-[90px] relative z-10 fadeInUp">
+            <footer className="bg-[#1b242e] w-screen flex pt-15 lg:pt-[90px] relative z-10 fadeInUp">
                 <div className="container">
                     <div className="flex flex-wrap -mx-4">
                         <div className="w-full sm:w-1/2 md:w-1/2 lg:w-4/12 xl:w-3/12 px-4">

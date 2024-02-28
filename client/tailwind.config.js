@@ -12,7 +12,7 @@ module.exports = {
     },
     extend: {
       width: {
-        '1400': '1400px'
+        '1250': '1250px'
       },
       backgroundColor: {
         primary: '#F5F5F5',
@@ -21,6 +21,7 @@ module.exports = {
       },
       maxWidth: {
         '600': '600px',
+        '1250': '1250px',
       },
       cursor: {
         pointer: 'pointer'

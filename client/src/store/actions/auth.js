@@ -3,29 +3,25 @@ import { apiRegister, apiLogin } from '../../services/auth'
 
 export const register = (payload) => async (dispatch) => {
     try {
-        const response = await apiRegister(payload)
+        const response = await apiRegister(payload);
         if (response?.data.err === 0) {
             dispatch({
                 type: actionTypes.REGISTER_SUCCESS,
-                data: response.data.token
-            })
+                data: response.data.token,
+            });
         } else {
             dispatch({
                 type: actionTypes.REGISTER_FAIL,
-                data: response.data.msg
-            })
+                data: response.data.msg,
+            });
         }
-
     } catch (error) {
         dispatch({
             type: actionTypes.REGISTER_FAIL,
-            data: null
-        })
-
+            data: null,
+        });
     }
-
-
-}
+};
 
 export const login = (payload) => async (dispatch) => {
     try {
@@ -56,3 +52,7 @@ export const login = (payload) => async (dispatch) => {
 export const logout = () => ({
     type: actionTypes.LOGOUT
 })
+
+export const resetRegister = () => ({
+    type: actionTypes.RESET_REGISTER,
+});
