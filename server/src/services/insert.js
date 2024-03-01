@@ -6,6 +6,8 @@ import chothuecanho from '../../data/chothuecanho.json'
 import chothuephongtro from '../../data/chothuephongtro.json'
 import nhachothue from '../../data/nhachothue.json'
 import generateCode from '../ultis/generateCode'
+import { dataPrice, dataArea } from '../ultis/data'
+import { getNumberFromString, getNumberFromStringV2 } from '../ultis/common'
 require('dotenv').config()
 const dataBody = chothuematbang.body
 
@@ -20,6 +22,9 @@ export const insertService = () => new Promise(async (resolve, reject) => {
             let userId = v4()
             let imagesId = v4()
             let overviewId = v4()
+            let desc = JSON.stringify(item?.mainContent?.content)
+            let currentArea = getNumberFromString(item?.header?.attributes?.acreage)
+            let currentPrice = getNumberFromString(item?.header?.attributes?.price)
             await db.Post.create({
                 id: postId,
                 title: item?.header?.title,
@@ -28,10 +33,14 @@ export const insertService = () => new Promise(async (resolve, reject) => {
                 address: item?.header?.address,
                 attributesId,
                 categoryCode: 'CTMB',
-                description: JSON.stringify(item?.mainContent?.content),
+                description: desc,
+                areaCode: dataArea.find(area => area.max > currentArea && area.min <= currentArea)?.code,
+                priceCode: dataPrice.find(area => area.max > currentPrice && area.min <= currentPrice)?.code,
                 userId,
                 overviewId,
-                imagesId
+                imagesId,
+                priceNumber: getNumberFromStringV2(item?.header?.attributes?.price),
+                areaNumber: getNumberFromStringV2(item?.header?.attributes?.acreage)
             })
             await db.Attribute.create({
                 id: attributesId,
@@ -75,5 +84,27 @@ export const insertService = () => new Promise(async (resolve, reject) => {
         resolve('Done.')
     } catch (error) {
         reject(error)
+    }
+})
+
+export const createPricesAndAreas = () => new Promise((resolve, reject) => {
+    try {
+        dataPrice.forEach(async (item, index) => {
+            await db.Price.create({
+                code: item.code,
+                value: item.value,
+                order: index + 1
+            })
+        })
+        dataArea.forEach(async (item, index) => {
+            await db.Area.create({
+                code: item.code,
+                value: item.value,
+                order: index + 1
+            })
+        })
+        resolve('OK')
+    } catch (err) {
+        reject(err)
     }
 })

@@ -189,9 +189,9 @@ const Header = () => {
                         <>
                             {!isLoggedIn && (
                                 <div className="flex items-center gap-3">
-                                    <Button text={'Đăng nhập'} textColor={'text-[#3961fb]'} bgColor='bg-[#0000]' onClick={goLogin} />
+                                    <Button text={'Đăng nhập'} textColor={'text-[#3961fb]'} border={'border'} bgColor='bg-[#0000]' onClick={goLogin} />
                                     <NavLink to={path.REGISTER}>
-                                        <Button text={'Đăng ký'} textColor={'text-white'} bgColor='bg-[#3961fb]' />
+                                        <Button text={'Đăng ký'} textColor={'text-white'} border={'border'} bgColor='bg-[#3961fb]' />
                                     </NavLink>
                                 </div>
                             )}
@@ -199,7 +199,7 @@ const Header = () => {
                             {isLoggedIn && (
                                 <div>
                                     <small>Ten</small>
-                                    <Button text={'Đăng xuất'} textColor={'text-[#3961fb]'} bgColor='bg-[#0000]' onClick={() => dispatch(actions.logout())} />
+                                    <Button text={'Đăng xuất'} textColor={'text-[#3961fb]'} border={'border'} bgColor='bg-[#0000]' onClick={() => dispatch(actions.logout())} />
                                 </div>
                             )}
                         </>
