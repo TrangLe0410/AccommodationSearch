@@ -4,3 +4,6 @@ export { default as SearchItem } from './SearchItem';
 export { default as ProvinceBtn } from './ProvinceBtn';
 export { default as Province } from './Province';
 export { default as Slider } from './Slider';
+export { default as Item } from './Item';
+export { default as ItemSidebar } from './ItemSidebar';
+export { default as PageNumber } from './PageNumber';

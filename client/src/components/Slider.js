@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 
 const images = [
     'https://www.windleycontracting.com/wp-content/gallery/comm-4-tillicum-lelum/till-lelum-main.jpg',
@@ -97,4 +97,4 @@ const Slider = () => {
     );
 };
 
-export default Slider;
+export default memo(Slider);
