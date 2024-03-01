@@ -24,12 +24,14 @@ export const getPostsService = () => new Promise(async (resolve, reject) => {
     }
 })
 
-export const getPostsLimitService = (page) => new Promise(async (resolve, reject) => {
+export const getPostsLimitService = (page, query, { priceNumber, areaNumber }) => new Promise(async (resolve, reject) => {
     try {
         let offset = (!page || +page <= 1) ? 0 : (+page - 1)
-
+        const queries = { ...query }
+        if (priceNumber) queries.priceNumber = { [Op.between]: priceNumber }
+        if (areaNumber) queries.areaNumber = { [Op.between]: areaNumber }
         const response = await db.Post.findAndCountAll({
-
+            where: queries,
             raw: true,
             nest: true,
             offset: offset * +process.env.LIMIT,
