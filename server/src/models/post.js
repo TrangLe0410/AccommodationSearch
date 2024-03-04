@@ -28,6 +28,9 @@ module.exports = (sequelize, DataTypes) => {
         imagesId: DataTypes.STRING,
         priceCode: DataTypes.STRING,
         areaCode: DataTypes.STRING,
+        provinceCode: DataTypes.STRING,
+        priceNumber: DataTypes.FLOAT,
+        areaNumber: DataTypes.FLOAT,
     }, {
         sequelize,
         modelName: 'Post',
