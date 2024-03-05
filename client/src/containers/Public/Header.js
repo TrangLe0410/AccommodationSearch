@@ -5,7 +5,8 @@ import { useNavigate, NavLink } from "react-router-dom";
 import { path } from '../../ultils/constant';
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from '../../store/actions';
-
+import icons from '../../ultils/icons'
+const { AiOutlinePlusCircle, AiOutlineLogout, BsChevronDown } = icons
 const Header = () => {
     const navigate = useNavigate();
     const { isLoggedIn } = useSelector(state => state.auth);
@@ -16,20 +17,10 @@ const Header = () => {
         setDropdownVisible(!isDropdownVisible);
     };
     const [isDropdownVisible, setDropdownVisible] = useState(false);
-    // const DropdownMenu = () => {
-    //     const [isDropdownVisible, setDropdownVisible] = useState(false);
-
-    //     const toggleDropdown = () => {
-    //         setDropdownVisible(!isDropdownVisible);
-    //     };
-
-    // }
-
 
     const [isFixed, setIsFixed] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     const dispatch = useDispatch();
-
 
     useEffect(() => {
         const handleScroll = () => {
@@ -189,9 +180,11 @@ const Header = () => {
                         <>
                             {!isLoggedIn && (
                                 <div className="flex items-center gap-3">
-                                    <Button text={'Đăng nhập'} textColor={'text-[#3961fb]'} border={'border'} bgColor='bg-[#0000]' onClick={goLogin} />
+                                    <Button text={'Đăng nhập'} textColor={'text-[#3961fb]'} hover={'hover:bg-blue-700 hover:text-[#ffffff]'}
+                                        border={'border'} bgColor='bg-[#0000]' onClick={goLogin} />
                                     <NavLink to={path.REGISTER}>
-                                        <Button text={'Đăng ký'} textColor={'text-white'} border={'border'} bgColor='bg-[#3961fb]' />
+                                        <Button text={'Đăng ký'} textColor={'text-white'} hover={'hover:bg-blue-700 hover:text-[#ffffff]'}
+                                            border={'border'} bgColor='bg-[#3961fb]' />
                                     </NavLink>
                                 </div>
                             )}
@@ -199,9 +192,19 @@ const Header = () => {
                             {isLoggedIn && (
                                 <div>
                                     <small>Ten</small>
-                                    <Button text={'Đăng xuất'} textColor={'text-[#3961fb]'} border={'border'} bgColor='bg-[#0000]' onClick={() => dispatch(actions.logout())} />
+                                    <Button text={'Đăng xuất'} textColor={'text-[#3961fb]'} border={'border'} hover={'hover:bg-blue-700 hover:text-[#ffffff]'}
+                                        bgColor='bg-[#0000]' onClick={() => dispatch(actions.logout())} />
                                 </div>
                             )}
+                            <Button
+                                text={'Đăng tin'}
+                                textColor='text-white'
+                                bgColor='bg-secondary2'
+                                IcAfter={AiOutlinePlusCircle}
+                                hover={'hover:bg-[#E13427]'}
+
+
+                            />
                         </>
                     )}
                 </div>

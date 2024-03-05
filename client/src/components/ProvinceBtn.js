@@ -1,8 +1,9 @@
 import React, { memo } from 'react'
 
-const ProvinceBtn = ({ name, image }) => {
+const ProvinceBtn = ({ name, image, onClick }) => {
     return (
-        <div className='shadow-md rounded-bl-md text-blue-700 rounded-br-md cursor-pointer hover:text-orange-600'>
+        <div className='shadow-md rounded-bl-md text-blue-700 rounded-br-md cursor-pointer hover:text-orange-600'
+            onClick={onClick}>
             <img
                 src={image}
                 alt={name}
@@ -10,7 +11,7 @@ const ProvinceBtn = ({ name, image }) => {
             />
             <div className='font-medium p-2 text-[16px] text-center'>{name}</div>
         </div>
-    )
-}
+    );
+};
 
 export default memo(ProvinceBtn);

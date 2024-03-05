@@ -1,12 +1,28 @@
 import React, { memo, useState } from 'react'
 import icons from "../ultils/icons"
+import { Link, useNavigate } from 'react-router-dom'
+import moment from 'moment'
+import 'moment/locale/vi'
+import { formatVietnameseToString } from '../ultils/Common/formatVietnameseToString'
 const indexs = [0, 1, 2, 3]
 const { GrStar, RiHeartFill, RiHeartLine, BsBookmarkStarFill } = icons
-const Item = ({ images, user, title, star, description, attributes, address, id }) => {
+const Item = ({ images, user, title, star, description, attributes, address, id, createdAt }) => {
     const [isHoverHeart, setIsHoverHeart] = useState(false)
+    const navigate = useNavigate()
+    const handleStar = (star) => {
+        let stars = []
+        for (let i = 1; i <= +star; i++) stars.push(<GrStar className="star-item" style={{ color: '#fbbf24' }} size={23} />)
+        return stars
+
+    }
+    const formatTime = (createdAt) => {
+        return moment(createdAt).fromNow()
+    }
     return (
         <div className='w-full flex border-t border-orange-600 py-4'>
-            <div className='w-2/5 flex flex-wrap gap-[2px] items-center relative cursor-pointer'>
+            <Link to={`chi-tiet/${formatVietnameseToString(title)}/${id}`}
+                className='w-2/5 flex flex-wrap gap-[2px] items-center relative cursor-pointer'
+            >
                 {images.length > 0 && images.filter((i, index) => indexs.some(i => i === index))?.map((i, index) => {
                     return (
                         <img key={index} src={i} alt="preview" className='w-[48%] h-[150px] object-cover' />
@@ -25,19 +41,20 @@ const Item = ({ images, user, title, star, description, attributes, address, id 
 
                 </div>
 
-            </div>
+            </Link>
             <div className="w-3/5">
                 <div className=" flex justify-between gap-4 w-full">
-                    <div className="text-red-600 font-medium ml-1 text-xl">
-
-                        <GrStar className="star-item" style={{ color: '#fbbf24' }} size={23} />
-                        <GrStar className="star-item" style={{ color: '#fbbf24' }} size={23} />
-                        <GrStar className="star-item" style={{ color: '#fbbf24' }} size={23} />
-                        <GrStar className="star-item" style={{ color: '#fbbf24' }} size={23} />
-                        <GrStar className="star-item" style={{ color: '#fbbf24' }} size={23} />
-
+                    <Link to={`chi-tiet/${formatVietnameseToString(title)}/${id}`}
+                        className="text-red-600 font-medium ml-1 text-xl"
+                    >
+                        {handleStar(+star).length > 0 && handleStar(+star).map((star, number) => {
+                            return (
+                                <span key={number}>{star}</span>
+                            )
+                        })}
                         {title}
-                    </div>
+
+                    </Link>
                     <div className="w-[10%] flex justify-end">
                         <BsBookmarkStarFill size={28} color='orange' />
                     </div>
@@ -50,7 +67,7 @@ const Item = ({ images, user, title, star, description, attributes, address, id 
                         {`${address.split(',')[address.split(',').length - 2]}${address.split(',')[address.split(',').length - 1]}`}
                     </span>
 
-                    <span className="text-[16px] text-gray-500">3 giờ trước</span>
+                    <span className="text-[16px] text-gray-500">{formatTime(createdAt)}</span>
                 </div>
                 <p className='text-gray-500 text-lg w-full h-[90px] text-ellipsis overflow-hidden'>
                     {description}

@@ -1,5 +1,5 @@
-import React, { useState, useEffect, memo } from 'react';
-
+import React, { useState, useEffect, memo, useRef } from 'react';
+import { useSearchParams } from 'react-router-dom'
 const images = [
     'https://www.windleycontracting.com/wp-content/gallery/comm-4-tillicum-lelum/till-lelum-main.jpg',
     'https://cdnnews.mogi.vn/news/wp-content/uploads/2023/06/02104229/thue-phong-tro-da-nang-4.jpg',
@@ -8,6 +8,7 @@ const images = [
 
 const Slider = () => {
     const [activeSlide, setActiveSlide] = useState(0);
+
 
     const handleSlide = (direction) => {
         const totalSlides = images.length;

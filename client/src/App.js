@@ -1,8 +1,18 @@
 import { Routes, Route } from 'react-router-dom';
-import { Blog, Contact, Home, Login, Register, RentalApartment, RentalHouse, RentalRoom, HomePage } from './containers/Public';
+import { Blog, Contact, Home, Login, Register, Rental, HomePage, DetailPost, SearchDetail } from './containers/Public';
 import { path } from './ultils/constant';
-
+import * as actions from './store/actions'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
 function App() {
+  const dispatch = useDispatch()
+
+
+  useEffect(() => {
+    dispatch(actions.getPrices())
+    dispatch(actions.getAreas())
+    dispatch(actions.getProvinces())
+  }, [])
   return (
     <div className="bg-primary ">
       <Routes>
@@ -10,11 +20,15 @@ function App() {
           <Route path='*' element={<HomePage />} />
           <Route path={path.LOGIN} element={<Login />} />
           <Route path={path.REGISTER} element={<Register />} />
-          <Route path={path.CHO_THUE_PHONG_TRO} element={<RentalRoom />} />
-          <Route path={path.NHA_CHO_THUE} element={<RentalHouse />} />
-          <Route path={path.CHO_THUE_CAN_HO} element={<RentalApartment />} />
+          <Route path={path.CHO_THUE_CAN_HO} element={<Rental />} />
+          <Route path={path.CHO_THUE_PHONG_TRO} element={<Rental />} />
+          <Route path={path.NHA_CHO_THUE} element={<Rental />} />
+          <Route path={path.CHO_THUE_MAT_BANG} element={<Rental />} />
           <Route path={path.TIN_TUC} element={<Blog />} />
           <Route path={path.LIEN_HE} element={<Contact />} />
+          <Route path={'chi-tiet/*'} element={<DetailPost />} />
+          {/* <Route path="chi-tiet/:title/:postId" element={<DetailPost />} /> */}
+          <Route path={path.SEARCH} element={<SearchDetail />} />
         </Route>
 
 

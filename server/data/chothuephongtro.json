@@ -26,7 +26,7 @@
                     "content": "Chuyên mục: Cho thuê phòng trọ Quận Liên Chiểu",
                     "classType": "Cho thuê phòng trọ Quận Liên Chiểu"
                 },
-                "address": "Địa chỉ: 74 Hoàng Minh Thảo, Hòa Minh, Liên Chiểu, Đà Nẵng",
+                "address": "Địa chỉ: 74 Hoàng Minh Thảo, Hòa Minh, Quận Liên Chiểu, Đà Nẵng",
                 "attributes": {
                     "price": "2.6 triệu/tháng",
                     "acreage": "18m2",
@@ -1881,6 +1881,447 @@
                     {
                         "name": "Zalo",
                         "content": "0707807343"
+                    }
+                ]
+            }
+        },
+        {
+            "images": [
+                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2023/12/18/img-20231207-140711_1702896584.jpg",
+                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2023/12/18/img-20231207-140706_1702896584.jpg",
+                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2023/12/18/img-20231207-140651_1702896585.jpg",
+                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2023/12/18/img-20231207-140701_1702896585.jpg"
+            ],
+            "header": {
+                "title": "Trọ Khu CN Hoà Cầm, phòng Mới giá rẻ",
+                "star": "5",
+                "class": {
+                    "content": "Chuyên mục: Cho thuê phòng trọ Quận Cẩm Lệ",
+                    "classType": "Cho thuê phòng trọ Quận Cẩm Lệ"
+                },
+                "address": "Địa chỉ: 55 Hoà Cầm, Phường Hòa Thọ Tây, Quận Cẩm Lệ, Đà Nẵng",
+                "attributes": {
+                    "price": "850.000 đồng/thángg",
+                    "acreage": "18m2",
+                    "published": "Hôm nay",
+                    "hashtag": "614735"
+                }
+            },
+            "mainContent": {
+                "header": "Thông tin mô tả",
+                "content": [
+                    "Địa chỉ: Gần khu công nghiệp Hòa Cầm.",
+                    "Tên google map: Khu Trọ Đạo Đức",
+                    "Nhà trọ: Cách điểm mua đồ ăn sáng khoảng 50m.",
+                    "Cách quán cơm khoảng 300m.",
+                    "Cách trạm xe Đà Nẵng, Ái Nghĩa, Quốc Lộ 14B khoảng 700m.",
+                    "Cách công ty TNHH Fujikura Automotive Việt Nam, đường số 2, Hòa Thọ Tây, 1,2km.",
+                    "- Đặt cọc phòng 1 tháng.",
+                    "+ Dịch vụ:",
+                    "- Điện: 3.8k/KWH.",
+                    "- Nước máy: 25k/m3.",
+                    "- Wifi, rác, vệ sinh, thang máy: 150k / phòng/ tháng.",
+                    "- Xe máy: 100k/ xe / tháng.",
+                    "- Liên hệ: Mr.Trung( call, zalo)"
+                ]
+            },
+            "overview": {
+                "header": "Đặc điểm tin đăng",
+                "content": [
+                    {
+                        "name": "Mã tin:",
+                        "content": "#614735"
+                    },
+                    {
+                        "name": "Khu vực",
+                        "content": "Cho thuê phòng trọ Đà Nẵng"
+                    },
+                    {
+                        "name": "Loại tin rao:",
+                        "content": "Phòng trọ, nhà trọ"
+                    },
+                    {
+                        "name": "Đối tượng thuê:",
+                        "content": "Tất cả"
+                    },
+                    {
+                        "name": "Gói tin:",
+                        "content": "Tin VIP nổi bật"
+                    },
+                    {
+                        "name": "Ngày đăng:",
+                        "content": "Thứ 6, 10:21 23/02/2024"
+                    },
+                    {
+                        "name": "Ngày hết hạn:",
+                        "content": "Thứ 6, 10:21 01/03/2024"
+                    }
+                ]
+            },
+            "contact": {
+                "header": "Thông tin liên hệ",
+                "content": [
+                    {
+                        "name": "Liên hệ:",
+                        "content": "Duc"
+                    },
+                    {
+                        "name": "Điện thoại:",
+                        "content": "0966985485"
+                    },
+                    {
+                        "name": "Zalo",
+                        "content": "0966985485"
+                    }
+                ]
+            }
+        },
+        {
+            "images": [
+                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/02/27/1a_1709018003.jpg",
+                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/02/27/1b_1709018003.jpg",
+                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/02/27/1c_1709018004.jpg",
+                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/02/27/1d_1709018004.jpg"
+            ],
+            "header": {
+                "title": "Phòng trọ Sinh viên K1/40 Hoàng Văn Thái",
+                "star": "5",
+                "class": {
+                    "content": "Chuyên mục: Cho thuê phòng trọ Quận Liên Chiểu",
+                    "classType": "Cho thuê phòng trọ Quận Liên Chiểu"
+                },
+                "address": "Địa chỉ: K1/40 Hoàng Văn Thái, Phường Hòa Minh, Quận Liên Chiểu, Đà Nẵng",
+                "attributes": {
+                    "price": "1 triệu/tháng",
+                    "acreage": "18m2",
+                    "published": "Hôm nay",
+                    "hashtag": "614735"
+                }
+            },
+            "mainContent": {
+                "header": "Thông tin mô tả",
+                "content": [
+                    "Phòng trọ sinh viên nằm ở KIỆT 1, số nhà 40 , ĐƯỜNG HOÀNG VĂN THÁI , cạnh nhà May Long , phòng thoáng ,dân cư đông đúc vui vẻ, nằm gần chợ , cây xăng , khu dân cư đông đúc vui vẻ, cách Đại Học Sư Phạm 700m , Khu thể chất Đại học Duy Tân 500m , Đại học Bách khoa 1,5km , điện sài bao nhiêu tính bấy nhiêu , bao nước , Bao wifi . Wifi cáp quang fpt bao mạnh xài thả ga . Chỉ còn 3 phòng . Ưu tiên cho Sinh viên , .",
+                    "- Đặt cọc phòng 1 tháng.",
+                    "+ Dịch vụ:",
+                    "- Điện: 3.8k/KWH.",
+                    "- Nước máy: 25k/m3."
+                ]
+            },
+            "overview": {
+                "header": "Đặc điểm tin đăng",
+                "content": [
+                    {
+                        "name": "Mã tin:",
+                        "content": "#614735"
+                    },
+                    {
+                        "name": "Khu vực",
+                        "content": "Cho thuê phòng trọ Đà Nẵng"
+                    },
+                    {
+                        "name": "Loại tin rao:",
+                        "content": "Phòng trọ, nhà trọ"
+                    },
+                    {
+                        "name": "Đối tượng thuê:",
+                        "content": "Tất cả"
+                    },
+                    {
+                        "name": "Gói tin:",
+                        "content": "Tin VIP nổi bật"
+                    },
+                    {
+                        "name": "Ngày đăng:",
+                        "content": "Thứ 6, 10:21 23/02/2024"
+                    },
+                    {
+                        "name": "Ngày hết hạn:",
+                        "content": "Thứ 6, 10:21 01/03/2024"
+                    }
+                ]
+            },
+            "contact": {
+                "header": "Thông tin liên hệ",
+                "content": [
+                    {
+                        "name": "Liên hệ:",
+                        "content": "Hoài Linh"
+                    },
+                    {
+                        "name": "Điện thoại:",
+                        "content": "0702347969"
+                    },
+                    {
+                        "name": "Zalo",
+                        "content": "0702347969"
+                    }
+                ]
+            }
+        },
+        {
+            "images": [
+                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/03/04/429782656-279806718474348-3460161986746501298-n_1709526284.jpg",
+                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/03/04/429754126-279806708474349-5672694474243522450-n_1709526284.jpg",
+                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/03/04/429753840-279806701807683-8034249957964225765-n_1709526284.jpg",
+                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/03/04/429664213-279806801807673-3097105930872228073-n_1709526284.jpg"
+            ],
+            "header": {
+                "title": "Cho thuê trọ gần trường đại học Bách Khoa, ngay 68/11 Hà Bá Ôn, Liên Chiểu, Đà Nẵng",
+                "star": "5",
+                "class": {
+                    "content": "Chuyên mục: Cho thuê phòng trọ Quận Liên Chiểu",
+                    "classType": "Cho thuê phòng trọ Quận Liên Chiểu"
+                },
+                "address": "Địa chỉ: 68/11 Hà Bá Ôn, Phường Hòa Minh, Quận Liên Chiểu, Đà Nẵng",
+                "attributes": {
+                    "price": "1.5 triệu/tháng",
+                    "acreage": "18m2",
+                    "published": "Hôm nay",
+                    "hashtag": "614735"
+                }
+            },
+            "mainContent": {
+                "header": "Thông tin mô tả",
+                "content": [
+                    "Địa chỉ: Cho thuê trọ gần trường Đại học Bách Khoa",
+                    "Không chung chủ",
+                    "Phòng trọ sạch sẽ, mát mẻ, có gác cao thoáng",
+                    "Cách quán cơm khoảng 300m.",
+                    "Tường được ốp gạch đẹp, sạch",
+                    "Cách công ty TNHH Fujikura Automotive Việt Nam, đường số 2, Hòa Thọ Tây, 1,2km.",
+                    "- Đặt cọc phòng 1 tháng.",
+                    "+ Dịch vụ:",
+                    "- Điện: 3.8k/KWH.",
+                    "- Nước máy: 25k/m3."
+                ]
+            },
+            "overview": {
+                "header": "Đặc điểm tin đăng",
+                "content": [
+                    {
+                        "name": "Mã tin:",
+                        "content": "#614735"
+                    },
+                    {
+                        "name": "Khu vực",
+                        "content": "Cho thuê phòng trọ Đà Nẵng"
+                    },
+                    {
+                        "name": "Loại tin rao:",
+                        "content": "Phòng trọ, nhà trọ"
+                    },
+                    {
+                        "name": "Đối tượng thuê:",
+                        "content": "Tất cả"
+                    },
+                    {
+                        "name": "Gói tin:",
+                        "content": "Tin VIP nổi bật"
+                    },
+                    {
+                        "name": "Ngày đăng:",
+                        "content": "Thứ 5, 09:04 29/02/2024"
+                    },
+                    {
+                        "name": "Ngày hết hạn:",
+                        "content": "Thứ 3, 09:04 05/03/2024"
+                    }
+                ]
+            },
+            "contact": {
+                "header": "Thông tin liên hệ",
+                "content": [
+                    {
+                        "name": "Liên hệ:",
+                        "content": "Cô Tuyết"
+                    },
+                    {
+                        "name": "Điện thoại:",
+                        "content": "0905174454"
+                    },
+                    {
+                        "name": "Zalo",
+                        "content": "0905174454"
+                    }
+                ]
+            }
+        },
+        {
+            "images": [
+                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2023/05/15/20200925-162422_1684141315.jpg",
+                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2023/05/15/20200925-163654_1684141365.jpg",
+                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2023/05/15/20200923-151802-001_1684141332.jpg",
+                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2023/05/15/20201005-171137_1684141323.jpg"
+            ],
+            "header": {
+                "title": "Phòng trọ đường Hải Sơn quận Hải Châu Đà Nẵng",
+                "star": "5",
+                "class": {
+                    "content": "Chuyên mục: Cho thuê phòng trọ Quận Hải Châu",
+                    "classType": "Cho thuê phòng trọ Quận Hải Châu"
+                },
+                "address": "Địa chỉ: 38 Hải Sơn, Phường Thanh Bình, Quận Hải Châu, Đà Nẵng",
+                "attributes": {
+                    "price": "1 triệu/tháng",
+                    "acreage": "18m2",
+                    "published": "Hôm nay",
+                    "hashtag": "614735"
+                }
+            },
+            "mainContent": {
+                "header": "Thông tin mô tả",
+                "content": [
+                    "Phòng trọ đường Hải Sơn quận Hải Châu Đaf Nẵng",
+                    "Gần trung tâm thành phố Đà Nẵng",
+                    "Gần chợ Đống Đa và các gần các siêu thị và khu mua sắm",
+                    "Cách quán cơm khoảng 300m.",
+                    "Thuận tiện cho việc đi lại làm việc và đi học",
+                    "Gần các trường đại sư phạm Đà Nẵng, trường đại học Duy Tân, trường Ông Ích Khiêm..vv.",
+                    "- Đặt cọc phòng 1 tháng.",
+                    "+ Dịch vụ:",
+                    "- Điện: 3.8k/KWH.",
+                    "- Nước máy: 25k/m3."
+                ]
+            },
+            "overview": {
+                "header": "Đặc điểm tin đăng",
+                "content": [
+                    {
+                        "name": "Mã tin:",
+                        "content": "#614735"
+                    },
+                    {
+                        "name": "Khu vực",
+                        "content": "Cho thuê phòng trọ Đà Nẵng"
+                    },
+                    {
+                        "name": "Loại tin rao:",
+                        "content": "Phòng trọ, nhà trọ"
+                    },
+                    {
+                        "name": "Đối tượng thuê:",
+                        "content": "Tất cả"
+                    },
+                    {
+                        "name": "Gói tin:",
+                        "content": "Tin VIP nổi bật"
+                    },
+                    {
+                        "name": "Ngày đăng:",
+                        "content": "Thứ 6, 10:21 23/02/2024"
+                    },
+                    {
+                        "name": "Ngày hết hạn:",
+                        "content": "Thứ 6, 10:21 01/03/2024"
+                    }
+                ]
+            },
+            "contact": {
+                "header": "Thông tin liên hệ",
+                "content": [
+                    {
+                        "name": "Liên hệ:",
+                        "content": "Văn Lý"
+                    },
+                    {
+                        "name": "Điện thoại:",
+                        "content": "0905675928"
+                    },
+                    {
+                        "name": "Zalo",
+                        "content": "0905675928"
+                    }
+                ]
+            }
+        },
+        {
+            "images": [
+                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/01/06/4579ecb9-0913-47cd-b16e-c8c537af733a_1704517299.jpg",
+                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/01/06/1442e1ac-041b-495a-a5f1-b99d42006805_1704517308.jpg",
+                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/01/06/79830391-9e42-40bd-957a-4dacf6edd8fc_1704517304.jpg",
+                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/01/06/0de6d415-6060-4ad7-be16-583cb004764d_1704517304.jpg"
+            ],
+            "header": {
+                "title": "Cho Thuê phòng giá rẻ, rộng rãi, sạch sẽ ngay trung tâm thành phố",
+                "star": "5",
+                "class": {
+                    "content": "Chuyên mục: Cho thuê phòng trọ Quận Hải Châu",
+                    "classType": "Cho thuê phòng trọ Quận Hải Châu"
+                },
+                "address": "Địa chỉ: K58/46 Ông Ích Khiêm, Phường Thạch Thang, Quận Hải Châu, Đà Nẵng",
+                "attributes": {
+                    "price": "3.5 triệu/tháng",
+                    "acreage": "45m2",
+                    "published": "Hôm nay",
+                    "hashtag": "614735"
+                }
+            },
+            "mainContent": {
+                "header": "Thông tin mô tả",
+                "content": [
+                    "Cho Thuê phòng rộng rãi, sạch sẽ, ngay trung tâm thành phố.",
+                    "Gần công viên, có bếp chung và sân vườn rộng rãi",
+                    "Nhà trọ: Cách điểm mua đồ ăn sáng khoảng 50m.",
+                    "Cách quán cơm khoảng 300m.",
+                    "Cách trạm xe Đà Nẵng, Ái Nghĩa, Quốc Lộ 14B khoảng 700m.",
+                    "Cách công ty TNHH Fujikura Automotive Việt Nam, đường số 2, Hòa Thọ Tây, 1,2km.",
+                    "- Đặt cọc phòng 1 tháng.",
+                    "+ Dịch vụ:",
+                    "- Điện: 3.8k/KWH.",
+                    "- Nước máy: 25k/m3.",
+                    "- Wifi, rác, vệ sinh, thang máy: 150k / phòng/ tháng.",
+                    "- Xe máy: 100k/ xe / tháng.",
+                    "- Liên hệ: Doãn Thị Sen - 0931858527"
+                ]
+            },
+            "overview": {
+                "header": "Đặc điểm tin đăng",
+                "content": [
+                    {
+                        "name": "Mã tin:",
+                        "content": "#614735"
+                    },
+                    {
+                        "name": "Khu vực",
+                        "content": "Cho thuê phòng trọ Đà Nẵng"
+                    },
+                    {
+                        "name": "Loại tin rao:",
+                        "content": "Phòng trọ, nhà trọ"
+                    },
+                    {
+                        "name": "Đối tượng thuê:",
+                        "content": "Tất cả"
+                    },
+                    {
+                        "name": "Gói tin:",
+                        "content": "Tin VIP nổi bật"
+                    },
+                    {
+                        "name": "Ngày đăng:",
+                        "content": "Thứ 7, 12:12 06/01/2024"
+                    },
+                    {
+                        "name": "Ngày hết hạn:",
+                        "content": "Thứ 3, 12:12 16/01/2024"
+                    }
+                ]
+            },
+            "contact": {
+                "header": "Thông tin liên hệ",
+                "content": [
+                    {
+                        "name": "Liên hệ:",
+                        "content": "Doãn Thị Sen"
+                    },
+                    {
+                        "name": "Điện thoại:",
+                        "content": "0931858527"
+                    },
+                    {
+                        "name": "Zalo",
+                        "content": "0931858527"
                     }
                 ]
             }

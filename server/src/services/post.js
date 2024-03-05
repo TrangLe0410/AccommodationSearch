@@ -78,3 +78,27 @@ export const getNewPostService = () => new Promise(async (resolve, reject) => {
         reject(error)
     }
 })
+
+export const getPostByIdService = (postId) => new Promise(async (resolve, reject) => {
+    try {
+        const response = await db.Post.findOne({
+            where: { id: postId },
+            raw: true,
+            nest: true,
+            include: [
+                { model: db.Image, as: 'images', attributes: ['image'] },
+                { model: db.Attribute, as: 'attributes', attributes: ['price', 'acreage', 'published', 'hashtag'] },
+                { model: db.User, as: 'user', attributes: ['name', 'zalo', 'phone'] },
+            ],
+            attributes: ['id', 'title', 'star', 'address', 'description', 'createdAt']
+        });
+
+        resolve({
+            err: response ? 0 : 1,
+            msg: response ? 'OK' : 'Getting the post is failed.',
+            response
+        });
+    } catch (error) {
+        reject(error);
+    }
+});
