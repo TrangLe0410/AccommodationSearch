@@ -26,7 +26,7 @@ const Rental = () => {
             <Slider />
             <div>
                 <h1 className="text-[32px] font-bold">{categoryCurrent?.header}</h1>
-                <p className="text-lg text-gray-700">{categoryCurrent?.subheader}</p>
+                <p className="text-base text-gray-700">{categoryCurrent?.subheader}</p>
             </div>
             <Province />
             <div className="w-full flex gap-5">

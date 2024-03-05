@@ -9,7 +9,7 @@ const ProvinceBtn = ({ name, image, onClick }) => {
                 alt={name}
                 className='w-[220px] h-[140px] object-cover rounded-tl-md rounded-tr-md'
             />
-            <div className='font-medium p-2 text-[16px] text-center'>{name}</div>
+            <div className='font-medium p-2 text-base text-center'>{name}</div>
         </div>
     );
 };

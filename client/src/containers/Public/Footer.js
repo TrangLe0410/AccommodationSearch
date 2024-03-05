@@ -7,7 +7,7 @@ import jcb from "../../assets/jcb.png";
 const Footer = () => {
     return (
         <div className="w-full flex">
-            <footer className="bg-[#1b242e] w-full flex pt-15 lg:pt-[90px] relative z-10 fadeInUp">
+            <footer className="bg-[#1b242e] w-full flex pt-10 p-8 lg:pt-[80px] relative z-10 fadeInUp">
                 <div className="container ">
                     <div className="flex flex-wrap -mx-4">
                         <div className="w-full sm:w-1/2 md:w-1/2 lg:w-4/12 xl:w-3/12 px-4">
@@ -19,6 +19,7 @@ const Footer = () => {
                                         src={logo}
                                         alt="logo"
                                         className="max-w-full "
+
                                     />
                                 </div>
                                 <p className="text-base text-[#f3f4fe] mb-7">
@@ -90,7 +91,7 @@ const Footer = () => {
                         </div>
                         <div className="w-full sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12 px-4">
                             <div className="w-full mb-10">
-                                <h4 className="text-white text-lg font-semibold mb-9">Luffy Land</h4>
+                                <h4 className="text-white text-base font-semibold mb-9">Luffy Land</h4>
                                 <ul>
                                     <li>
                                         <div
@@ -149,7 +150,7 @@ const Footer = () => {
                         </div>
                         <div className="w-full sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12 px-4">
                             <div className="w-full mb-10">
-                                <h4 className="text-white text-lg font-semibold mb-9">Hỗ trợ</h4>
+                                <h4 className="text-white text-base font-semibold mb-9">Hỗ trợ</h4>
                                 <ul>
                                     <li>
                                         <div
@@ -208,7 +209,7 @@ const Footer = () => {
                         </div>
                         <div className="w-full sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12 px-4">
                             <div className="w-full mb-10">
-                                <h4 className="text-white text-lg font-semibold mb-9">
+                                <h4 className="text-white text-base font-semibold mb-9">
                                     Liên hệ với chúng tôi
                                 </h4>
                                 <ul>
@@ -270,7 +271,7 @@ const Footer = () => {
                         </div>
                         <div className="w-full md:w-2/3 lg:w-6/12 xl:w-3/12 px-4">
                             <div className="w-full mb-10">
-                                <h4 className="text-white text-lg font-semibold mb-9">Phương thức thanh toán</h4>
+                                <h4 className="text-white text-base font-semibold mb-9">Phương thức thanh toán</h4>
                                 <ul className="flex flex-wrap items-center">
                                     <li>
                                         <div

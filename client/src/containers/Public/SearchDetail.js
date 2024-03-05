@@ -9,7 +9,7 @@ const SearchDetail = () => {
     const location = useLocation()
 
     return (
-        <div className='w-full  text-lg flex flex-col gap-3' >
+        <div className='w-full  text-base flex flex-col gap-3' >
 
             <div className='flex items-start gap-6' style={{ lineHeight: '1.5' }}>
                 <p className='text-[28px] font-bold text-red-500'>KẾT QUẢ TÌM KIẾM:</p>

@@ -75,7 +75,7 @@ const Search = () => {
                 <button
 
                     type='button'
-                    className='w-1/5 outline-none py-2 px-4 rounded-md bg-[#0071c2] text-lg flex items-center justify-center gap-2 text-white font-medium hover:shadow-lg'
+                    className='w-1/5 outline-none py-2 px-4 rounded-md bg-[#0071c2] text-base flex items-center justify-center gap-2 text-white font-medium hover:shadow-lg'
                     onClick={handleSearch}
 
                 >

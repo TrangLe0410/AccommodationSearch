@@ -26,8 +26,8 @@ function App() {
           <Route path={path.CHO_THUE_MAT_BANG} element={<Rental />} />
           <Route path={path.TIN_TUC} element={<Blog />} />
           <Route path={path.LIEN_HE} element={<Contact />} />
-          <Route path={'chi-tiet/*'} element={<DetailPost />} />
-          {/* <Route path="chi-tiet/:title/:postId" element={<DetailPost />} /> */}
+          {/* <Route path={'chi-tiet/*'} element={<DetailPost />} /> */}
+          <Route path="chi-tiet/:title/:postId" element={<DetailPost />} />
           <Route path={path.SEARCH} element={<SearchDetail />} />
         </Route>
 

@@ -3,7 +3,7 @@ import React, { memo } from "react";
 const InputForm = ({ lable, value, setValue, keyPayload, invalidFields, setInvalidFields, type }) => {
     return (
         <div>
-            <lable htmlFor="phone" className="text-lg">{lable}</lable>
+            <lable htmlFor="phone" className="text-base">{lable}</lable>
             <input
                 type={type || 'text'}
                 id="phone"

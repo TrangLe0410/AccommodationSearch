@@ -72,26 +72,25 @@ export const getNewPosts = () => async (dispatch) => {
     }
 }
 
-export const getPostById = () => async (dispatch) => {
+export const getPostById = (postId) => async (dispatch) => {
     try {
-        const response = await apigetPostById()
-        if (response?.data.err === 0) {
+        const response = await apigetPostById(postId);
+
+        if (response?.data?.err === 0) {
             dispatch({
-                type: actionTypes.GET_POST_ID,
-                postId: response.data.response,
-            })
+                type: actionTypes.GET_POST_ID_SUCCESS,
+                payload: response.data.response,
+            });
         } else {
             dispatch({
-                type: actionTypes.GET_POST_ID,
-                msg: response.data.msg,
-                postId: null
-            })
+                type: actionTypes.GET_POST_ID_FAIL,
+                payload: response.data.msg,
+            });
         }
-
     } catch (error) {
         dispatch({
-            type: actionTypes.GET_POST_ID,
-            postId: null
-        })
+            type: actionTypes.GET_POST_ID_FAIL,
+            payload: 'An error occurred while fetching the post.',
+        });
     }
-}
+};

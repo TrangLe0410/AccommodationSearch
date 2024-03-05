@@ -85,7 +85,7 @@ const Modal = ({ setIsShowModal, content, name, handleSubmit, queries, arrMinMax
 
     return (
         <div onClick={() => { setIsShowModal(false) }}
-            className='fixed top-0 text-lg left-0 right-0 bottom-0 bg-overlay-70 z-20 flex justify-center items-center'
+            className='fixed top-0 text-base left-0 right-0 bottom-0 bg-overlay-70 z-20 flex justify-center items-center'
         >
             <div onClick={(e) => {
                 e.stopPropagation()

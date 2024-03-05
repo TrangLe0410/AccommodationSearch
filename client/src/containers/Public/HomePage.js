@@ -7,7 +7,12 @@ import * as actions from '../../store/actions'
 import { useSearchParams } from "react-router-dom"
 const Homepage = () => {
     const { categories, prices, areas } = useSelector(state => state.app)
+    const dispatch = useDispatch()
 
+
+    useEffect(() => {
+        dispatch(actions.getCategories())
+    }, [])
 
     return (
         <div className='w-full flex flex-col gap-3 mt-1.5' >
@@ -16,7 +21,7 @@ const Homepage = () => {
 
             <div>
                 <h1 className="text-[32px] font-bold">{text.HOME_TITLE}</h1>
-                <p className="text-lg text-gray-700">{text.HOME_DESCRIPTION}</p>
+                <p className="text-base text-gray-700">{text.HOME_DESCRIPTION}</p>
             </div>
 
             <Province />

@@ -27,13 +27,13 @@ const List = ({ categoryCode }) => {
     //     dispatch(getPosts())
     // })
     return (
-        <div className='w-full bg-white mt-6 shadow-sm rounded-md border border-gray-300 p-8 items-start'>
+        <div className='w-full bg-white shadow-sm rounded-md border border-gray-300 p-8 items-start'>
             <div className='flex items-center justify-between'>
-                <h4 className='text-3xl font-semibold'> Danh sách bài đăng</h4>
-                <span className='text-lg'> Cập nhật: 12:05 25/08/2023</span>
+                <h4 className='text-2xl font-semibold'> Danh sách bài đăng</h4>
+                <span className='text-base'> Cập nhật: 12:05 25/08/2023</span>
             </div>
             <div className='flex items-center gap-2 my-2'>
-                <span className='text-lg'>Sắp xếp: </span>
+                <span className='text-sm'>Sắp xếp: </span>
                 <Button bgColor='bg-gray-200' hover={'hover:bg-gray-300'} text={'Mặc định'} />
                 <Button bgColor='bg-gray-200' hover={'hover:bg-gray-300'} text={'Mới nhất'} />
                 <Button bgColor='bg-gray-200' hover={'hover:bg-gray-300'} text={'Nhiều nhất'} />

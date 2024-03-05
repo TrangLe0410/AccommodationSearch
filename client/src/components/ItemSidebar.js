@@ -31,8 +31,8 @@ const ItemSidebar = ({ title, content, isDouble, type }) => {
     }
     return (
         <div className=' w-full p-4 rounded-md bg-white'>
-            <h3 className='text-2xl font-semibold mb-6'> {title}</h3>
-            {!isDouble && <div className='flex flex-col gap-2 text-lg' >
+            <h3 className='text-xl font-semibold mb-6'> {title}</h3>
+            {!isDouble && <div className='flex flex-col gap-2 text-base' >
                 {content?.length > 0 && content.map(item => {
                     return (
                         <Link
@@ -47,7 +47,7 @@ const ItemSidebar = ({ title, content, isDouble, type }) => {
                 })}
             </div>}
 
-            {isDouble && <div className='flex flex-col gap-2 text-lg' >
+            {isDouble && <div className='flex flex-col gap-2 text-base' >
                 {content?.length > 0 && formatContent(content).map((item, index) => {
                     return (
                         <div key={index} className=''>

@@ -40,15 +40,14 @@ export const apiGetNewPosts = () => new Promise(async (resolve, reject) => {
         reject(error)
     }
 })
-export const apigetPostById = () => new Promise(async (resolve, reject) => {
+export const apigetPostById = (postId) => new Promise(async (resolve, reject) => {
     try {
         const response = await axiosConfig({
             method: 'get',
-            url: `/api/v1/post/:postId`,
-        })
-        resolve(response)
-
+            url: `/api/v1/post/${postId}`,
+        });
+        resolve(response);
     } catch (error) {
-        reject(error)
+        reject(error);
     }
-})
+});

@@ -24,11 +24,12 @@ const postReducer = (state = initState, action) => {
                 msg: action.msg || '',
                 newPosts: action.newPosts || []
             }
-        case actionTypes.GET_POST_ID:
+        case actionTypes.GET_POST_ID_SUCCESS:
+            console.log("getPostById action success");
             return {
                 ...state,
-                msg: action.msg || '',
-                postId: action.id !== undefined ? action.id : null
+                msg: action.payload.msg || '',
+                postDetails: action.payload || null,
             };
         default:
             return state;
