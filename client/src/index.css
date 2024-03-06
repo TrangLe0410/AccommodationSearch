@@ -70,6 +70,14 @@ input[type="range"]::-ms-thumb:active {
     border: solid 1px rgb(144, 211, 255);
 }
 
+
+
+.flex-row {
+    display: flex;
+    flex-direction: column;
+    /* Hoặc có thể sử dụng 'row' tùy thuộc vào thiết kế mong muốn */
+}
+
 @keyframes slide-right {
     0% {
         -webkit-transform: translateX(0);

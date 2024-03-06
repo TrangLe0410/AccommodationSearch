@@ -1,7 +1,7 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState, useRef } from "react";
 import logo from "../../assets/logo.png";
 import { Button } from "../../components";
-import { useNavigate, NavLink } from "react-router-dom";
+import { useNavigate, NavLink, useSearchParams } from "react-router-dom";
 import { path } from '../../ultils/constant';
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from '../../store/actions';
@@ -21,6 +21,13 @@ const Header = () => {
     const [isFixed, setIsFixed] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     const dispatch = useDispatch();
+    const headerRef = useRef();
+
+    const [searchParams] = useSearchParams();
+
+    useEffect(() => {
+        headerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, [searchParams.get('page')]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -46,13 +53,13 @@ const Header = () => {
     }, []);
 
     return (
-        <div className={`w-full h-[100px] ${isFixed ? 'fixed top-0 bg-white' : 'sticky top-0 bg-white'} flex items-center justify-center border-b border-solid border-black border-opacity-15 z-50`}>
+        <div ref={headerRef} className={`w-full h-[100px] ${isFixed ? 'fixed top-0 bg-white' : 'sticky top-0 bg-white'} flex items-center justify-center border-b border-solid border-black border-opacity-15 z-50`}>
             <div className="w-4/5 flex items-center justify-between ">
                 <div className="w-full flex items-center justify-between boder-bottom ">
                     <div>
                         <NavLink to={path.HOME}>
                             {/* Set a fixed size for the logo */}
-                            <img src={logo} alt="logo" className="h-[125px] object-contain" />
+                            <img src={logo} alt="logo" className="h-[100px] object-contain" />
                         </NavLink>
                     </div>
                     <div className="container">
