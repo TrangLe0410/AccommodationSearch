@@ -79,18 +79,18 @@ export const getPostById = (postId) => async (dispatch) => {
         if (response?.data?.err === 0) {
             dispatch({
                 type: actionTypes.GET_POST_ID_SUCCESS,
-                payload: response.data.response,
+                postDetails: response.data.response,
             });
         } else {
             dispatch({
                 type: actionTypes.GET_POST_ID_FAIL,
-                payload: response.data.msg,
+                postDetails: response.data.msg,
             });
         }
     } catch (error) {
         dispatch({
             type: actionTypes.GET_POST_ID_FAIL,
-            payload: 'An error occurred while fetching the post.',
+            postDetails: 'An error occurred while fetching the post.',
         });
     }
 };

@@ -7,11 +7,11 @@ import jcb from "../../assets/jcb.png";
 const Footer = () => {
     return (
         <div className="w-full flex">
-            <footer className="bg-[#1b242e] w-full flex pt-10 p-8 lg:pt-[80px] relative z-10 fadeInUp">
+            <footer className="bg-[#1b242e] w-full flex pt-6 p-6 lg:pt-[80px] relative z-10 fadeInUp">
                 <div className="container ">
                     <div className="flex flex-wrap -mx-4">
                         <div className="w-full sm:w-1/2 md:w-1/2 lg:w-4/12 xl:w-3/12 px-4">
-                            <div className="w-full mb-10">
+                            <div className="w-full mb-4">
                                 <div
                                     className="inline-block max-w-[160px] mb-6"
                                 >

@@ -12,7 +12,7 @@ const SearchDetail = () => {
         <div className='w-full  text-base flex flex-col gap-3' >
 
             <div className='flex items-start gap-6' style={{ lineHeight: '1.5' }}>
-                <p className='text-[28px] font-bold text-red-500'>KẾT QUẢ TÌM KIẾM:</p>
+
                 <h1 className='text-[28px] font-bold' style={{ wordWrap: 'break-word', maxWidth: '760px', }}>
                     {location.state?.titleSearch || 'Kết quả tìm kiếm'}
                 </h1>

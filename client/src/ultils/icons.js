@@ -8,10 +8,14 @@ import { MdOutlineHouseSiding, MdOutlineLibraryBooks } from 'react-icons/md'
 import { FiSearch } from 'react-icons/fi'
 import { ImPencil2, ImBin } from 'react-icons/im'
 import { BiUserPin } from 'react-icons/bi'
-
+import { MdLocationPin } from "react-icons/md";
+import { FaRegClock } from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
 const icons = {
     AiOutlinePlusCircle,
-
+    FaPhoneAlt,
+    FaRegClock,
+    MdLocationPin,
     GrNext,
     BsChevronRight,
     HiOutlineLocationMarker,

@@ -5,7 +5,8 @@ const initState = {
     msg: '',
     count: 0,
     newPosts: [],
-    postId: null  // Assuming postId is a single value, not an array
+    postId: null,
+    postDetails: [],
 }
 
 const postReducer = (state = initState, action) => {
@@ -25,11 +26,11 @@ const postReducer = (state = initState, action) => {
                 newPosts: action.newPosts || []
             }
         case actionTypes.GET_POST_ID_SUCCESS:
-            console.log("getPostById action success");
             return {
                 ...state,
-                msg: action.payload.msg || '',
-                postDetails: action.payload || null,
+                postDetails: action.postDetails || [],
+                msg: action.msg || '',
+                count: action.count || 0
             };
         default:
             return state;
