@@ -1,5 +1,5 @@
 import actionTypes from './actionTypes'
-import { apiGetPosts, apiGetPostsLimit } from '../../services/post'
+import { apiGetPosts, apiGetPostsLimit, apiGetNewPosts, apigetPostById } from '../../services/post'
 
 export const getPosts = () => async (dispatch) => {
     try {
@@ -48,3 +48,49 @@ export const getPostsLimit = (query) => async (dispatch) => {
         })
     }
 }
+export const getNewPosts = () => async (dispatch) => {
+    try {
+        const response = await apiGetNewPosts()
+        if (response?.data.err === 0) {
+            dispatch({
+                type: actionTypes.GET_NEW_POST,
+                newPosts: response.data.response,
+            })
+        } else {
+            dispatch({
+                type: actionTypes.GET_NEW_POST,
+                msg: response.data.msg,
+                newPosts: null
+            })
+        }
+
+    } catch (error) {
+        dispatch({
+            type: actionTypes.GET_NEW_POST,
+            newPosts: null
+        })
+    }
+}
+
+export const getPostById = (postId) => async (dispatch) => {
+    try {
+        const response = await apigetPostById(postId);
+
+        if (response?.data?.err === 0) {
+            dispatch({
+                type: actionTypes.GET_POST_ID_SUCCESS,
+                payload: response.data.response,
+            });
+        } else {
+            dispatch({
+                type: actionTypes.GET_POST_ID_FAIL,
+                payload: response.data.msg,
+            });
+        }
+    } catch (error) {
+        dispatch({
+            type: actionTypes.GET_POST_ID_FAIL,
+            payload: 'An error occurred while fetching the post.',
+        });
+    }
+};

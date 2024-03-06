@@ -1,19 +1,16 @@
 import actionTypes from "../actions/actionTypes";
+
 const initState = {
     posts: [],
     msg: '',
     count: 0,
-    newPosts: []
+    newPosts: [],
+    postId: null  // Assuming postId is a single value, not an array
 }
 
 const postReducer = (state = initState, action) => {
     switch (action.type) {
         case actionTypes.GET_POSTS:
-            return {
-                ...state,
-                posts: action.posts || [],
-                msg: action.msg || ''
-            }
         case actionTypes.GET_POSTS_LIMIT:
             return {
                 ...state,
@@ -21,11 +18,22 @@ const postReducer = (state = initState, action) => {
                 msg: action.msg || '',
                 count: action.count || 0
             }
-
+        case actionTypes.GET_NEW_POST:
+            return {
+                ...state,
+                msg: action.msg || '',
+                newPosts: action.newPosts || []
+            }
+        case actionTypes.GET_POST_ID_SUCCESS:
+            console.log("getPostById action success");
+            return {
+                ...state,
+                msg: action.payload.msg || '',
+                postDetails: action.payload || null,
+            };
         default:
             return state;
     }
-
 }
 
-export default postReducer
+export default postReducer;

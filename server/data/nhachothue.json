@@ -421,7 +421,7 @@
                     "content": "Chuyên mục: Cho thuê nhà Quận Cẩm Lệ",
                     "classType": "Cho thuê nhà Quận Cẩm Lệ"
                 },
-                "address": "Địa chỉ: Phường Hòa Xuân, Quận Cẩm Lệ, Đà Nẵng",
+                "address": "Địa chỉ:34 Nguyễn Nhàn, Phường Hòa Xuân, Quận Cẩm Lệ, Đà Nẵng",
                 "attributes": {
                     "price": "5 triệu/tháng",
                     "acreage": "75m2",
@@ -598,10 +598,10 @@
                 "title": "CC cho Thuê Nhà MT 10m5 đường Bùi Trang Chước View Cầu NTP",
                 "star": "2",
                 "class": {
-                    "content": "Chuyên mục: Cho thuê nhà Quận Tân Bình",
-                    "classType": "Cho thuê nhà Quận Tân Bình"
+                    "content": "Chuyên mục: Cho thuê nhà Quận Thanh Khê",
+                    "classType": "Cho thuê nhà Quận Thanh Khê"
                 },
-                "address": "Địa chỉ: 1/9/8 Đường Hồng Lạc, Phường 10, Quận Tân Bình, Hồ Chí Minh",
+                "address": "Địa chỉ: 1/9/8 Đường Hồng Lạc, Phường 10, Quận Thanh Khê, Đà Nẵng",
                 "attributes": {
                     "price": "15 triệu/tháng",
                     "acreage": "168m2",
@@ -613,7 +613,7 @@
                 "header": "Thông tin mô tả",
                 "content": [
                     "Cho thuê nhà nguyên căn có phòng khách và phòng bếp, 3 tầng rưỡi, 3 ban công, 4 phòng ngủ, 5 toilet. Hẻm 4m, sạch sẽ, an ninh. Diện tích sàn (4.2m x 12m) 50.4m2, tổng diện tích XD 168m2. Gần chợ Tân Bình, Bệnh viện Thống Nhất.",
-                    "Địa chỉ: 1/9/8 Hồng Lạc, Phường 10, Quận Tân Bình",
+                    "Địa chỉ: 1/9/8 Hồng Lạc, Phường 10, Quận Thanh Khê",
                     "Giá: 15 triệu/tháng",
                     "Liên hệ: Dân - 0908468911"
                 ]
@@ -1729,20 +1729,20 @@
         },
         {
             "images": [
-                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/%7BVar:ImgPath5%7D",
+                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/03/03/z5212048809126-27393b6601e840170e48c35dfc0bc052-copy_1709438292.jpg",
                 "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/02/23/z5184534851087-7359133581eed4427dce93c957619c6c_1708694689.jpg",
                 "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/02/23/z5184534858754-23a851f2992146d2dc3ca9b56512ee68_1708694690.jpg",
                 "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/02/23/z5184534856789-7f1dc58df8dff1030aed727378b9ecae_1708694690.jpg",
-                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/%7BVar:ImgPath5%7D",
+                "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/03/03/z5212048810363-cf2f1b61673cbdf3ca53b2ec60ac4b6d_1709438292.jpg",
                 "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/02/23/z5184534851087-7359133581eed4427dce93c957619c6c_1708694689.jpg"
             ],
             "header": {
-                "title": "Cho thuê nhà, vị trí đẹo, căn góc hẻm 7 mét thông đường Tô Hiệu, 4PN, thích hợp ở hoặc kinh doanh",
+                "title": "Cho thuê nhà, vị trí đẹp, căn góc hẻm 7 mét thông đường Tô Hiệu, 4PN, thích hợp ở hoặc kinh doanh",
                 "class": {
                     "content": "Chuyên mục: Cho thuê nhà Quận Liên Chiểu",
                     "classType": "Cho thuê nhà Quận Liên Chiểu"
                 },
-                "address": "Địa chỉ: Đường Tô Hiệu, Liên Chiểu",
+                "address": "Địa chỉ: Đường Tô Hiệu, Phường Hòa Minh, Quận Liên Chiểu, Đà nẵng",
                 "attributes": {
                     "price": "13 triệu/tháng",
                     "acreage": "95m2",

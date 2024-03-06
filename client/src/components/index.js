@@ -7,3 +7,6 @@ export { default as Slider } from './Slider';
 export { default as Item } from './Item';
 export { default as ItemSidebar } from './ItemSidebar';
 export { default as PageNumber } from './PageNumber';
+export { default as RelatedPost } from './RelatedPost';
+export { default as Sitem } from './Sitem'
+export { default as Modal } from './Modal'

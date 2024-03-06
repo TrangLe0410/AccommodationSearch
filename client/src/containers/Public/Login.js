@@ -123,7 +123,7 @@ const Login = () => {
                     </div>
 
                     <div className="mt-4  items-center justify-between">
-                        <p class=" mb-6 text-[#adadad] text-center text-lg ">Kết nối khác</p>
+                        <p class=" mb-6 text-[#adadad] text-center text-base ">Kết nối khác</p>
                         <ul class="flex justify-between -mx-2 mb-12">
                             <li class="px-2 w-full">
                                 <div className="flex h-11 items-center justify-center rounded-md bg-[#4064AC] hover:bg-opacity-90 transition cursor-pointer">

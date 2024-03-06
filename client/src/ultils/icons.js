@@ -11,6 +11,7 @@ import { BiUserPin } from 'react-icons/bi'
 
 const icons = {
     AiOutlinePlusCircle,
+
     GrNext,
     BsChevronRight,
     HiOutlineLocationMarker,
