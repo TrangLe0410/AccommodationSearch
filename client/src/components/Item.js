@@ -17,6 +17,8 @@ const Item = ({ images, user, title, star, description, attributes, address, id,
     const formatTime = (createdAt) => {
         return moment(createdAt).fromNow()
     }
+    const descriptionLength = typeof description === 'string' ? description.length : 0;
+
     return (
         <div className='w-full flex border-t border-orange-600 py-4'>
             <Link to={`chi-tiet/${formatVietnameseToString(title)}/${id}`}
@@ -41,8 +43,8 @@ const Item = ({ images, user, title, star, description, attributes, address, id,
                 </div>
 
             </Link>
-            <div className="w-3/5">
-                <div className=" flex justify-between gap-4  w-full">
+            <div className="w-3/5 p-4">
+                <div className=" flex justify-between gap-4  w-full ">
                     <Link to={`chi-tiet/${formatVietnameseToString(title)}/${id}`}
                         className="text-red-600 font-medium ml-1 text-lg"
                     >
@@ -65,11 +67,9 @@ const Item = ({ images, user, title, star, description, attributes, address, id,
                     <span className=' whitespace-nowrap overflow-hidden text-ellipsis'>
                         {`${address.split(',')[address.split(',').length - 2]}${address.split(',')[address.split(',').length - 1]}`}
                     </span>
-
-                    <span className="text-base text-gray-500">{formatTime(createdAt)}</span>
                 </div>
-                <p className='text-gray-500 text-base w-full h-[70px] text-ellipsis overflow-hidden'>
-                    {description}
+                <p className='text-gray-500 mt-3 text-base w-full h-[70px] text-ellipsis overflow-hidden'>
+                    {descriptionLength}
                 </p>
                 <div className="flex items-center my-5 justify-between mt-10">
                     <div className="flex items-center text-base">

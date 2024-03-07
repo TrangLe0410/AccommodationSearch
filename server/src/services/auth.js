@@ -2,12 +2,11 @@ import db from '../models'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import { v4 } from 'uuid'
-
 require('dotenv').config()
 
 const hashPassword = password => bcrypt.hashSync(password, bcrypt.genSaltSync(12))
 
-export const registerService = ({ phone, password, email, name }) => new Promise(async (resolve, reject) => {
+export const registerService = ({ phone, password, name, email }) => new Promise(async (resolve, reject) => {
     try {
         const response = await db.User.findOrCreate({
             where: { phone },
@@ -19,10 +18,10 @@ export const registerService = ({ phone, password, email, name }) => new Promise
                 id: v4()
             }
         })
-        const token = response[1] && jwt.sign({ id: response.id, phone: response.phone }, process.env.SECRET_KEY, { expiresIn: '2d' })
+        const token = response[1] && jwt.sign({ id: response[0].id, phone: response[0].phone }, process.env.SECRET_KEY, { expiresIn: '2d' })
         resolve({
             err: token ? 0 : 2,
-            msg: token ? 'Đăng Ký Thành Công !' : 'Số Điện Thoại Đã Được Sử Dụng !',
+            msg: token ? 'Register is successfully !' : 'Phone number has been aldready used !',
             token: token || null
         })
 
@@ -41,7 +40,7 @@ export const loginService = ({ phone, password }) => new Promise(async (resolve,
         const token = isCorrectPassword && jwt.sign({ id: response.id, phone: response.phone }, process.env.SECRET_KEY, { expiresIn: '2d' })
         resolve({
             err: token ? 0 : 2,
-            msg: token ? 'Đăng nhập thành công !' : response ? 'Sai mật khẩu !' : 'Số điện thoại không tồn tại !',
+            msg: token ? 'Login is successfully !' : response ? 'Password is wrong !' : 'Phone number not found !',
             token: token || null
         })
 

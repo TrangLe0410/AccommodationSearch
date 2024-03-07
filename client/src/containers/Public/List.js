@@ -40,20 +40,24 @@ const List = ({ categoryCode }) => {
             </div>
             <div className='items'>
                 {posts?.length > 0 && posts.map(item => {
+                    const parsedDescription = item?.description ? JSON.parse(item?.description) : null;
+                    const parsedImages = item?.images?.image ? JSON.parse(item?.images?.image) : null;
+
                     return (
                         <Item
                             key={item?.id}
                             address={item?.address}
                             attributes={item?.attributes}
-                            description={JSON.parse(item?.description)}
-                            images={JSON.parse(item?.images?.image)}
+                            description={parsedDescription}
+                            images={parsedImages}
                             star={+item?.star}
                             title={item?.title}
                             user={item?.user}
                             id={item?.id}
                         />
-                    )
+                    );
                 })}
+
             </div>
 
         </div>

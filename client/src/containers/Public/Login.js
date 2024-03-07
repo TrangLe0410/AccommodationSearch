@@ -24,7 +24,7 @@ const Login = () => {
 
     }
     useEffect(() => {
-        isLoggedIn && navigate('*')
+        isLoggedIn && navigate('/*')
     }, [isLoggedIn])
 
     useEffect(() => {
