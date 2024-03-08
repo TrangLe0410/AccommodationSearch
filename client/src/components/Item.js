@@ -66,7 +66,7 @@ const Item = ({ images, user, title, star, description, attributes, address, id,
                         {`${address.split(',')[address.split(',').length - 2]}${address.split(',')[address.split(',').length - 1]}`}
                     </span>
 
-                    <span className="text-base text-gray-500">{formatTime(createdAt)}</span>
+                    {/* <span className="text-base text-gray-500">{formatTime(createdAt)}</span> */}
                 </div>
                 <p className='text-gray-500 text-base w-full h-[70px] text-ellipsis overflow-hidden'>
                     {description}
