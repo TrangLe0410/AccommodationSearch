@@ -4,6 +4,7 @@ import { path } from './ultils/constant';
 import * as actions from './store/actions'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
+import { System, CreatePost } from './containers/System';
 function App() {
   const dispatch = useDispatch()
 
@@ -30,6 +31,13 @@ function App() {
           <Route path="chi-tiet/:title/:postId" element={<DetailPost />} />
           <Route path={path.SEARCH} element={<SearchDetail />} />
         </Route>
+
+        <Route path={path.SYSTEM} element={<System />}>
+          <Route path={path.CREATE_POST} element={<CreatePost />} />
+
+        </Route>
+
+
 
 
 
