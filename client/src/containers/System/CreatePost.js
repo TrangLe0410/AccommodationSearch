@@ -67,10 +67,8 @@ const CreatePost = () => {
             label: `${categories?.find(item => item.code === payload?.categoryCode)?.value} ${payload?.address?.split(',')[0]}`
         }
 
-        console.log(finalPayload)
-
-        // const response = await apiCreatePost(finalPayload)
-        // console.log(response)
+        const response = await apiCreatePost(finalPayload)
+        console.log(response)
     }
 
     return (
