@@ -19,7 +19,7 @@ const Item = ({ images, user, title, star, description, attributes, address, id,
     }
     return (
         <div className='w-full flex border-t border-orange-600 py-4'>
-            <Link to={`chi-tiet/${formatVietnameseToString(title)}/${id}`}
+            <Link to={`/chi-tiet/${formatVietnameseToString(title)}/${id}`}
                 className='w-2/5 flex flex-wrap gap-[2px] items-center relative cursor-pointer'
             >
                 {images.length > 0 && images.filter((i, index) => indexs.some(i => i === index))?.map((i, index) => {
@@ -43,7 +43,7 @@ const Item = ({ images, user, title, star, description, attributes, address, id,
             </Link>
             <div className="w-3/5">
                 <div className=" flex justify-between gap-4  w-full">
-                    <Link to={`chi-tiet/${formatVietnameseToString(title)}/${id}`}
+                    <Link to={`/chi-tiet/${formatVietnameseToString(title)}/${id}`}
                         className="text-red-600 font-medium ml-1 text-lg"
                     >
                         {handleStar(+star).length > 0 && handleStar(+star).map((star, number) => {

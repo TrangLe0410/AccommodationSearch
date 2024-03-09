@@ -9,12 +9,15 @@ import 'moment/locale/vi'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-const { GrStar, MdLocationPin, TbReportMoney, RiCrop2Line, FaRegClock, FaPhoneAlt } = icons
+const { GrStar, MdLocationPin, TbReportMoney, RiCrop2Line, FaRegClock, FaPhoneAlt, IoCalendarNumberOutline, GiPayMoney } = icons
 const DetailPost = () => {
     const { postId } = useParams();
     const dispatch = useDispatch();
     const { provinces } = useSelector(state => state.app);
     const { postDetails, msg } = useSelector(state => state.post);
+    useEffect(() => {
+        dispatch(actions.getCategories())
+    }, [])
 
 
     useEffect(() => {
@@ -141,19 +144,23 @@ const DetailPost = () => {
                                     <FaPhoneAlt size={24} color="white" />
                                     <button className=" text-white">{user?.phone}</button>
                                 </div>
+                                <div className="phone w-[100%] mt-3 justify-center  border rounded-lg  h-[40px] flex gap-3 items-center bg-white ">
+                                    <IoCalendarNumberOutline size={24} color="black" />
+                                    <button className=" text-black font-semibold">Đặt lịch hẹn</button>
+                                </div>
+                                <div className="phone w-[100%] mt-3 justify-center  border rounded-lg  h-[40px] flex gap-3 items-center bg-white ">
+                                    <GiPayMoney size={24} color="black" />
+                                    <button className=" text-black font-semibold">Đặt cọc tiền</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div className="mb-5 w-full p-3 bg-white border border-gray-300 rounded-lg">
                         <RelatedPost />
                     </div>
-                    <div className="mb-5 w-full p-3 bg-white border border-gray-300 rounded-lg">
-                        <ItemSidebar isDouble={true} title={'Tin nổi bật'} />
-                    </div>
-                    <div className="mb-5 w-full p-3 bg-white border border-gray-300 rounded-lg">
-                        <ItemSidebar isDouble={true} content={provinces} title={'Quận cho thuê'} />
-                    </div>
-
+                    {/* <div className="mb-5 w-full p-3 bg-white border border-gray-300 rounded-lg">
+                        <ItemSidebar title={'Tin nổi bật'} />
+                    </div> */}
                 </div>
 
             </div>

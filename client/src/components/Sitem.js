@@ -3,7 +3,7 @@ import moment from 'moment'
 import 'moment/locale/vi'
 import { Link, useNavigate } from 'react-router-dom'
 import { formatVietnameseToString } from '../ultils/Common/formatVietnameseToString'
-const Sitem = ({ title, price, image, createdAt, id, postId }) => {
+const Sitem = ({ title, price, image, createdAt, id }) => {
 
     const formatTime = (createdAt) => {
         return moment(createdAt).fromNow()
@@ -17,7 +17,7 @@ const Sitem = ({ title, price, image, createdAt, id, postId }) => {
                 className='w-[65px] h-[65px] object-cover flex-none rounded-md'
             />
             <div className='w-full flex-auto flex flex-col justify-between gap-1'>
-                <Link to={`chi-tiet/${formatVietnameseToString(title)}/${postId}`}>
+                <Link to={`/chi-tiet/${formatVietnameseToString(title)}/${id}`}>
                     <h4 className='text-blue-600 text-base'>{`${title?.slice(0, 45)}...`}</h4>
                 </Link>
 

@@ -11,8 +11,12 @@ import { BiUserPin } from 'react-icons/bi'
 import { MdLocationPin } from "react-icons/md";
 import { FaRegClock } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
+import { IoCalendarNumberOutline } from "react-icons/io5";
+import { GiPayMoney } from "react-icons/gi";
 const icons = {
     AiOutlinePlusCircle,
+    IoCalendarNumberOutline,
+    GiPayMoney,
     FaPhoneAlt,
     FaRegClock,
     MdLocationPin,

@@ -38,6 +38,7 @@ const ItemSidebar = ({ title, content, isDouble, type }) => {
                         <Link
                             to={`${formatVietnameseToString(item.value)}`}
                             key={item.code}
+
                             className='flex gap-2 items-center cursor-pointer hover:text-orange-600 border-b border-gray-200 pb-1 border-dashed'
                         >
                             <GrNext size={12} color='#ccc' />
