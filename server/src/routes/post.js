@@ -6,9 +6,11 @@ const router = express.Router()
 router.get('/all', postController.getPosts)
 router.get('/limit', postController.getPostsLimit)
 router.get('/new-post', postController.getNewPosts)
-router.get('/:postId', postController.getPostById);
+// router.get('/:postId', postController.getPostById);
 
 router.use(verifyToken)
 router.post('/create-new', postController.createNewPost)
+router.get('/limit-admin', postController.getPostsLimitAdmin)
+router.put('/update-post', postController.updatePost)
 
 export default router
