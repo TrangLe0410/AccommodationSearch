@@ -7,6 +7,8 @@ const initState = {
     newPosts: [],
     postId: null,
     postDetails: [],
+    postOfCurrent: [],
+    dataEdit: null
 }
 
 const postReducer = (state = initState, action) => {
@@ -32,6 +34,22 @@ const postReducer = (state = initState, action) => {
                 msg: action.msg || '',
                 count: action.count || 0
             };
+        case actionTypes.GET_POSTS_ADMIN:
+            return {
+                ...state,
+                msg: action.msg || '',
+                postOfCurrent: action.posts || []
+            }
+        case actionTypes.EDIT_POST:
+            return {
+                ...state,
+                dataEdit: action.dataEdit || null
+            }
+        case actionTypes.RESET_DATAEDIT_POST:
+            return {
+                ...state,
+                dataEdit: null
+            }
         default:
             return state;
     }

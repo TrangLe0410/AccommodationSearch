@@ -11,7 +11,7 @@ const Button = ({ text, textColor, textFont, bgColor, onClick, px, fullWidth, bo
             onClick={onClick}
         >
             <span> {text}</span>
-            <span>{IcAfter && <IcAfter />}</span>
+            {IcAfter && <span>{<IcAfter />}</span>}
 
         </button>
     )
