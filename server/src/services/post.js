@@ -38,6 +38,7 @@ export const getPostsLimitService = (page, query, { priceNumber, areaNumber }) =
             nest: true,
             offset: offset * +process.env.LIMIT,
             limit: +process.env.LIMIT,
+            order: [['createdAt', 'DESC']],
             include: [
                 { model: db.Image, as: 'images', attributes: ['image'] },
                 { model: db.Attribute, as: 'attributes', attributes: ['price', 'acreage', 'published', 'hashtag'] },
@@ -47,7 +48,7 @@ export const getPostsLimitService = (page, query, { priceNumber, areaNumber }) =
         })
         resolve({
             err: response ? 0 : 1,
-            msg: response ? 'OK' : 'Getting posts is failed.',
+            msg: response ? 'Create post succsess' : 'Getting posts is failed.',
             response
         })
 
