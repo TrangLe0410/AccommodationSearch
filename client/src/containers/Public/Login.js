@@ -6,6 +6,7 @@ import * as actions from '../../store/actions'
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
 import Swal from 'sweetalert2'
+import validate from "../../ultils/Common/validateFields"
 const Login = () => {
 
     const dispatch = useDispatch()
@@ -18,10 +19,9 @@ const Login = () => {
         password: ''
     })
     const handleSubmit = async () => {
-        let invalids = validate(payload)
+        let invalids = validate(payload, setInvalidFields)
         if (invalids === 0)
             dispatch(actions.login(payload))
-
     }
     useEffect(() => {
         isLoggedIn && navigate('/*')
@@ -32,57 +32,7 @@ const Login = () => {
 
     }, [msg, update])
 
-    const validate = (payload) => {
-        let invalids = 0
-        let fields = Object.entries(payload)
-        fields.forEach(item => {
-            if (item[1] === '') {
-                setInvalidFields(prev => [...prev, {
-                    name: item[0],
-                    message: 'Bạn không được để trống trường này.'
-                }])
-                invalids++
-            }
-        })
-        fields.forEach(item => {
-            switch (item[0]) {
-                case 'password':
-                    if (item[1].length < 6) {
-                        setInvalidFields(prev => [...prev, {
-                            name: item[0],
-                            message: 'Mật khẩu phải có tối thiểu 6 ký tự.'
-                        }])
-                        invalids++
-                    }
-                    break;
-                case 'phone':
-                    if (!+item[1]) {
-                        setInvalidFields(prev => [...prev, {
-                            name: item[0],
-                            message: 'Số điện thoại không hợp lệ.'
-                        }])
-                        invalids++
-                    }
-                    break
 
-                case 'email':
-                    // Kiểm tra định dạng email sử dụng regular expression
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(item[1])) {
-                        setInvalidFields(prev => [...prev, {
-                            name: item[0],
-                            message: 'Email không hợp lệ.'
-                        }])
-                        invalids++
-                    }
-                    break;
-
-                default:
-                    break;
-            }
-        })
-        return invalids
-    }
 
     return (
         <div className="w-full items-center justify-center flex mt-5">

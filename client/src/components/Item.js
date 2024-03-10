@@ -62,8 +62,12 @@ const Item = ({ images, user, title, star, description, attributes, address, id,
                 <div className="my-2 flex items-center justify-between text-base">
                     <span className="font-bold text-green-600 whitespace-nowrap overflow-hidden text-ellipsis">{attributes?.price}</span>
                     <span>{attributes?.acreage}</span>
-                    <span className=' whitespace-nowrap overflow-hidden text-ellipsis'>
-                        {`${address.split(',')[address.split(',').length - 2]}${address.split(',')[address.split(',').length - 1]}`}
+                    <span className='whitespace-nowrap overflow-hidden text-ellipsis'>
+                        {`${address
+                            .split(',')
+                            .slice(-2)
+                            .map((part, index, array) => (index === array.length - 1 ? part.trim() : part))
+                            .join(', ')}`}
                     </span>
 
                     {/* <span className="text-base text-gray-500">{formatTime(createdAt)}</span> */}
