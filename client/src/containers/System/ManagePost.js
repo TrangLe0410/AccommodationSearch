@@ -3,31 +3,73 @@ import { useDispatch, useSelector } from 'react-redux'
 import * as actions from '../../store/actions'
 import moment from "moment"
 import { Button, UpdatePost } from '../../components'
-
-
+import { apiDeletePost } from '../../services'
+import Swal from 'sweetalert2'
 const ManagePost = () => {
     const dispatch = useDispatch()
     const [isEdit, setIsEdit] = useState(false)
     const { postOfCurrent, dataEdit } = useSelector(state => state.post)
+    const [updateData, setUpdateData] = useState(false)
+    const [posts, setPosts] = useState([])
+    const [status, setStatus] = useState('0')
     useEffect(() => {
-        dispatch(actions.getPostsLimitAdmin())
-    }, [])
+        !dataEdit && dispatch(actions.getPostsLimitAdmin())
+    }, [dataEdit, updateData])
 
     useEffect(() => {
         !dataEdit && setIsEdit(false)
-
     }, [dataEdit])
 
+    useEffect(() => {
+        setPosts(postOfCurrent)
+    }, [postOfCurrent])
+
+    const handleDeletePost = async (postId) => {
+        // Sử dụng SweetAlert2 để hỏi người dùng chắc chắn muốn xóa không
+        const result = await Swal.fire({
+            title: 'Bạn chắc chắn muốn xóa bài đăng?',
+            text: 'Hành động này sẽ không thể hoàn tác!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Có!',
+            cancelButtonText: 'Không'
+        });
+
+        if (result.isConfirmed) {
+            const response = await apiDeletePost(postId);
+
+            if (response?.data.err === 0) {
+                Swal.fire('Thành công', 'Xóa bài đăng thành công', 'success');
+                setUpdateData(prev => !prev);
+            } else {
+                Swal.fire('Oops!', 'Xóa bài đăng thất bại', 'error');
+            }
+        }
+    };
+
+    useEffect(() => {
+        if (status === 1) {
+            const activePost = postOfCurrent?.filter(item => checkStatus(item?.overviews?.expired?.split(' ')[3]))
+            setPosts(activePost)
+        } else if (status === 2) {
+            const expiredPost = postOfCurrent?.filter(item => !checkStatus(item?.overviews?.expired?.split(' ')[3]))
+            setPosts(expiredPost)
+        } else {
+            setPosts(postOfCurrent)
+        }
+    }, [status])
+
+
     const checkStatus = (dateString) => moment(dateString, process.env.REACT_APP_FORMAT_DATE).isAfter(new Date().toDateString())
-
-
 
     return (
         <div className='flex flex-col gap-6'>
             <div className='py-4 border-b border-gray-200 flex items-center justify-between'>
                 <h1 className='text-3xl font-medium '>Quản lý bài đăng</h1>
-                <select className='outline-none border p-2 border-gray-200 rounded-md'>
-                    <option value="">Lọc theo trạng thái</option>
+                <select onChange={e => setStatus(+e.target.value)} value={status} className='outline-none border p-2 border-gray-200 rounded-md'>
+                    <option value="0">Lọc theo trạng thái</option>
+                    <option value="1">Đang hoạt động</option>
+                    <option value="2">Đã hết hạn</option>
 
                 </select>
             </div>
@@ -45,11 +87,11 @@ const ManagePost = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {!postOfCurrent
+                    {!posts
                         ? <tr>
                             <td colSpan="7" className="text-center">hahahaha</td>
                         </tr>
-                        : postOfCurrent?.map(item => {
+                        : posts?.map(item => {
                             return (
                                 <tr className='flex h-20 text-sm items-center' key={item.id}>
                                     <td className='border px-2 flex-1 h-full text-center '>{item?.overviews?.code}</td>
@@ -76,6 +118,7 @@ const ManagePost = () => {
                                             text='Xóa'
                                             bgColor='bg-red-600'
                                             textColor='text-white'
+                                            onClick={() => handleDeletePost(item.id)}
                                         />
 
                                     </td>
