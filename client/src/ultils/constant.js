@@ -10,8 +10,10 @@ export const path = {
     TIN_TUC: 'tin-tuc',
     LIEN_HE: 'lien-he',
     DICH_VU: 'dich-vu',
-    DETAIL_POST__TITLE__POSTID: 'chi-tiet/:title/:postId',
     SEARCH: 'tim-kiem',
+    DETAIL_POST__TITLE__POSTID: 'chi-tiet/:title/:postId',
+    DETAIL: '/chi-tiet/',
+    DETAIL_ALL: 'chi-tiet/*',
 
     SYSTEM: '/he-thong/*',
     CREATE_POST: 'tao-moi-bai-dang',

@@ -71,29 +71,33 @@ export const getNewPosts = () => async (dispatch) => {
         })
     }
 }
-
-export const getPostById = (postId) => async (dispatch) => {
+export const getOutstandingPost = () => async (dispatch) => {
     try {
-        const response = await apigetPostById(postId);
-
-        if (response?.data?.err === 0) {
+        const response = await apiGetPostsLimit({
+            limitPost: 5,
+            order: ['star', 'DESC']
+        })
+        if (response?.data.err === 0) {
             dispatch({
-                type: actionTypes.GET_POST_ID_SUCCESS,
-                postDetails: response.data.response,
-            });
+                type: actionTypes.GET_OUTSTANDING,
+                outStandingPost: response.data.response.rows,
+            })
         } else {
             dispatch({
-                type: actionTypes.GET_POST_ID_FAIL,
-                postDetails: response.data.msg,
-            });
+                type: actionTypes.GET_OUTSTANDING,
+                msg: response.data.msg,
+                outStandingPost: null
+            })
         }
+
     } catch (error) {
         dispatch({
-            type: actionTypes.GET_POST_ID_FAIL,
-            postDetails: 'An error occurred while fetching the post.',
-        });
+            type: actionTypes.GET_OUTSTANDING,
+            outStandingPost: null
+        })
     }
-};
+}
+
 
 export const getPostsLimitAdmin = (query) => async (dispatch) => {
     try {
