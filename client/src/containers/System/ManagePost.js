@@ -15,7 +15,6 @@ const ManagePost = () => {
     useEffect(() => {
         !dataEdit && dispatch(actions.getPostsLimitAdmin())
     }, [dataEdit, updateData])
-    console.log(posts)
 
     useEffect(() => {
         !dataEdit && setIsEdit(false)

@@ -1,6 +1,6 @@
 import icons from './icons'
 
-const { ImPencil2, MdOutlineLibraryBooks, BiUserPin } = icons
+const { ImPencil2, MdOutlineLibraryBooks, BiUserPin, FaCalendarAlt } = icons
 
 const menuManage = [
     {
@@ -16,11 +16,17 @@ const menuManage = [
         icon: <MdOutlineLibraryBooks />
     },
     {
-        id: 4,
-        text: 'Thông tin tài khoản',
-        path: '/he-thong/thong-tin-tai-khoan',
-        icon: <BiUserPin />
-    }
+        id: 3,
+        text: 'Quản lý lịch hẹn',
+        path: '/he-thong/quan-ly-lich-hen',
+        icon: <FaCalendarAlt />
+    },
+    // {
+    //     id: 4,
+    //     text: 'Thông tin tài khoản',
+    //     path: '/he-thong/thong-tin-tai-khoan',
+    //     icon: <BiUserPin />
+    // }
 ]
 
 export default menuManage

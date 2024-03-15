@@ -187,17 +187,17 @@ export const getPostsLimitAdminService = (page, id, query) => new Promise(async 
             limit: +process.env.LIMIT,
             order: [['createdAt', 'DESC']],
             include: [
-                { model: db.db.Appointment, as: 'appointments', attributes: ['id', 'userId', 'postId', 'appointmentDate', 'appointmentTime', 'content', 'status'] },
                 { model: db.Image, as: 'images', attributes: ['image'] },
                 { model: db.Attribute, as: 'attributes', attributes: ['price', 'acreage', 'published', 'hashtag'] },
                 { model: db.User, as: 'user', attributes: ['name', 'zalo', 'phone'] },
                 { model: db.Overview, as: 'overviews' },
+
             ],
-            // attributes: ['id', 'title', 'star', 'address', 'description']
+            attributes: ['id', 'title', 'star', 'address', 'description']
         })
         resolve({
             err: response ? 0 : 1,
-            msg: response ? 'Create post succsess' : 'Getting posts is failed.',
+            msg: response ? 'Retrieve posts success' : 'Failed to retrieve posts',
             response
         })
 
