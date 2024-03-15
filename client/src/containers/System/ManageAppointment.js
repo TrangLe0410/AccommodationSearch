@@ -23,6 +23,9 @@ const ManageAppointment = () => {
             dispatch(fetchAppointments(userId));
         }
     }, [currentData?.id, dispatch]);
+    useEffect(() => {
+        dispatch(actions.getPosts())
+    }, [])
 
     return (
         <div className='flex flex-col gap-6'>
