@@ -1,16 +1,14 @@
-// import axios from 'axios';
-// import actionTypes from './actionTypes';
+import actionTypes from './actionTypes'
+import { getAppointmentsByUserId } from '../../services/appointment'
 
-// export const createAppointment = (appointmentData) => async (dispatch) => {
-//     try {
-//         const response = await axios.post('/api/v1/appointment/create-appointment', appointmentData);
-//         dispatch({
-//             type: actionTypes.CREATE_APPOINTMENT_SUCCESS,
-//             appointment: response.data // Update this if needed based on server response
-//         });
-//         return response.data; // Return data from response if needed
-//     } catch (error) {
-//         console.error('Failed to create appointment:', error);
-//         throw error; // Throw error to handle in component
-//     }
-// };
+export const fetchAppointments = (userId) => {
+    return async (dispatch) => {
+        dispatch({ type: actionTypes.FETCH_APPOINTMENTS_REQUEST });
+        try {
+            const appointments = await getAppointmentsByUserId(userId);
+            dispatch({ type: actionTypes.FETCH_APPOINTMENTS_SUCCESS, payload: appointments });
+        } catch (error) {
+            dispatch({ type: actionTypes.FETCH_APPOINTMENTS_FAILURE, error: error.message });
+        }
+    };
+};

@@ -4,7 +4,7 @@ import { path } from './ultils/constant';
 import * as actions from './store/actions'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { System, CreatePost, ManagePost, EditAccount } from './containers/System';
+import { System, CreatePost, ManagePost, EditAccount, ManageAppointment } from './containers/System';
 function App() {
   const dispatch = useDispatch()
 
@@ -38,6 +38,7 @@ function App() {
           <Route path={path.CREATE_POST} element={<CreatePost />} />
           <Route path={path.MANAGE_POST} element={<ManagePost />} />
           <Route path={path.EDIT_ACCOUNT} element={<EditAccount />} />
+          <Route path={path.MANAGE_APPOINTMENT} element={<ManageAppointment />} />
 
         </Route>
 

@@ -17,3 +17,12 @@ export const createNewAppointmentService = async (userId, postId, appointmentDat
         throw error;
     }
 };
+
+export const getAppointmentsByUserIdService = async (userId) => {
+    try {
+        const appointments = await db.Appointment.findAll({ where: { userId } });
+        return appointments;
+    } catch (error) {
+        throw error;
+    }
+};

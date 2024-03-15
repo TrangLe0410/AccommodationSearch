@@ -14,3 +14,16 @@ export const createNewAppointment = (formData) => new Promise(async (resolve, re
         reject(error)
     }
 })
+
+export const getAppointmentsByUserId = (userId) => new Promise(async (resolve, reject) => {
+    try {
+        const response = await axiosConfig({
+            method: 'get',
+            url: `/api/v1/appointment/get-appointments/${userId}`,
+            params: { userId: userId }
+        });
+        resolve(response);
+    } catch (error) {
+        reject(error);
+    }
+});

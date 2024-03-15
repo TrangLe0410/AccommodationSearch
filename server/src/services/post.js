@@ -187,6 +187,7 @@ export const getPostsLimitAdminService = (page, id, query) => new Promise(async 
             limit: +process.env.LIMIT,
             order: [['createdAt', 'DESC']],
             include: [
+                { model: db.db.Appointment, as: 'appointments', attributes: ['id', 'userId', 'postId', 'appointmentDate', 'appointmentTime', 'content', 'status'] },
                 { model: db.Image, as: 'images', attributes: ['image'] },
                 { model: db.Attribute, as: 'attributes', attributes: ['price', 'acreage', 'published', 'hashtag'] },
                 { model: db.User, as: 'user', attributes: ['name', 'zalo', 'phone'] },

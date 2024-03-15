@@ -1,6 +1,6 @@
 import icons from './icons'
 
-const { ImPencil2, MdOutlineLibraryBooks, BiUserPin } = icons
+const { ImPencil2, MdOutlineLibraryBooks, BiUserPin, FaCalendarAlt } = icons
 
 const memuSidebar = [
     {
@@ -16,6 +16,13 @@ const memuSidebar = [
         icon: <MdOutlineLibraryBooks />
     },
     {
+        id: 3,
+        text: 'Quản lý lịch hẹn',
+        path: '/he-thong/quan-ly-lich-hen',
+        icon: <FaCalendarAlt />
+    },
+
+    {
         id: 4,
         text: 'Sửa thông tin cá nhân',
         path: '/he-thong/sua-thong-tin-ca-nhan',
@@ -26,7 +33,8 @@ const memuSidebar = [
         text: 'Liên hệ',
         path: '/he-thong/lien-he',
         icon: <BiUserPin />
-    }
+    },
+
 ]
 
 export default memuSidebar
