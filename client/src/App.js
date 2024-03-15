@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-import { Blog, Contact, Home, Login, Register, Rental, HomePage, DetailPost, SearchDetail } from './containers/Public';
+import { Blog, Contact, Home, Login, Register, Rental, HomePage, DetailPost, SearchDetail, Appointment } from './containers/Public';
 import { path } from './ultils/constant';
 import * as actions from './store/actions'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { System, CreatePost, ManagePost } from './containers/System';
+import { System, CreatePost, ManagePost, EditAccount } from './containers/System';
 function App() {
   const dispatch = useDispatch()
 
@@ -31,11 +31,13 @@ function App() {
           <Route path={path.DETAIL_POST__TITLE__POSTID} element={<DetailPost />} />
           {/* <Route path={path.DETAIL_ALL} element={<DetailPost />} /> */}
           <Route path={path.SEARCH} element={<SearchDetail />} />
+          <Route path={path.APPOINTMENT} element={<Appointment />} />
         </Route>
 
         <Route path={path.SYSTEM} element={<System />}>
           <Route path={path.CREATE_POST} element={<CreatePost />} />
           <Route path={path.MANAGE_POST} element={<ManagePost />} />
+          <Route path={path.EDIT_ACCOUNT} element={<EditAccount />} />
 
         </Route>
 

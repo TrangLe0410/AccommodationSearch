@@ -14,10 +14,12 @@ export const path = {
     DETAIL_POST__TITLE__POSTID: 'chi-tiet/:title/:postId',
     DETAIL: '/chi-tiet/',
     DETAIL_ALL: 'chi-tiet/*',
+    APPOINTMENT: 'dat-lich-hen',
 
     SYSTEM: '/he-thong/*',
     CREATE_POST: 'tao-moi-bai-dang',
-    MANAGE_POST: 'quan-ly-bai-dang'
+    MANAGE_POST: 'quan-ly-bai-dang',
+    EDIT_ACCOUNT: 'sua-thong-tin-ca-nhan'
 
 
 }

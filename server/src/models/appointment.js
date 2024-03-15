@@ -10,14 +10,18 @@ module.exports = (sequelize, DataTypes) => {
          * The `models/index` file will call this method automatically.
          */
         static associate(models) {
-            // define association here
+            Appointment.belongsTo(models.Post, { foreignKey: 'postId', targetKey: 'id', as: 'post' });
+            Appointment.belongsTo(models.User, { foreignKey: 'userId', targetKey: 'id', as: 'user' });
         }
     }
     Appointment.init({
         userId: DataTypes.STRING,
-        roomId: DataTypes.STRING,
-        appointmentTime: DataTypes.DATE,
-        status: DataTypes.STRING
+        postId: DataTypes.STRING,
+        appointmentDate: DataTypes.DATE,
+        appointmentTime: DataTypes.TIME,
+        content: DataTypes.STRING,
+        status: DataTypes.STRING,
+
     }, {
         sequelize,
         modelName: 'Appointment',

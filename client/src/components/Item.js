@@ -85,9 +85,13 @@ const Item = ({ images, user, title, star, description, attributes, address, id,
                         <button type="button" className="bg-blue-700 text-base text-white p-1 rounded-md">
                             {`Gọi ${user?.phone || '0328626789'}`}
                         </button>
-                        <button type="button" className="text-blue-700  text-base px-1 rounded-md border hover:bg-blue-700 hover:text-[#ffffff] border-blue-700">
+                        <a
+                            href={`https://zalo.me/${user?.zalo}`}
+                            target='_blank'
+                            className="text-blue-700  text-base px-1 rounded-md border hover:bg-blue-700 hover:text-[#ffffff] border-blue-700"
+                        >
                             Nhắn tin zalo
-                        </button>
+                        </a>
 
                     </div>
                 </div>

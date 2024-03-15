@@ -1,18 +1,25 @@
-import React, { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { useParams, Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getPostsLimit } from '../../store/actions'
 import { UseSelector } from 'react-redux'
 import { SliderPost } from '../../components'
 import icons from '../../ultils/icons'
 import objToArr from '../../ultils/Common/objToArr'
+import { useNavigate, createSearchParams } from 'react-router-dom'
 import { ItemSidebar, RelatedPost } from "../../components"
-const { GrStar, MdLocationPin, TbReportMoney, RiCrop2Line, FaRegClock, FaPhoneAlt, IoCalendarNumberOutline, GiPayMoney } = icons
+import { path } from '../../ultils/constant'
+import { Appointment } from "./index"
+const { GrStar, MdLocationPin, TbReportMoney, RiCrop2Line, FaRegClock, FaPhoneAlt, IoCalendarNumberOutline, GiPayMoney, SiZalo } = icons
 const DetailPost = () => {
     const { postId } = useParams()
     const dispatch = useDispatch()
     const { posts } = useSelector(state => state.post)
+    const navigate = useNavigate()
+    const [showModal, setShowModal] = useState(false);
 
+    const openModal = () => setShowModal(true);
+    const closeModal = () => setShowModal(false);
     useEffect(() => {
         postId && dispatch(getPostsLimit({ id: postId }))
 
@@ -22,6 +29,15 @@ const DetailPost = () => {
         for (let i = 1; i <= +star; i++) stars.push(<GrStar className="star-item" style={{ color: '#fbbf24' }} size={23} />);
         return stars;
     };
+    const handleFilterLabel = () => {
+        const titleSearch = `Tìm kiếm bài đăng theo chuyên mục ${posts[0]?.labelData?.value}`
+        navigate({
+            pathname: `/${path.SEARCH}`,
+            search: createSearchParams({ labelCode: posts[0]?.labelData?.code }).toString()
+        }, { state: { titleSearch } });
+
+
+    }
     return (
         <div className='w-full flex gap-4'>
             <div className='w-[70%] border bg-white border-gray-300 rounded-lg p-4' >
@@ -36,7 +52,11 @@ const DetailPost = () => {
 
                     <div className='flex items-center gap-2'>
                         <span>Chuyên mục:</span>
-                        <span className='text-blue-600 font-medium hover:text-orange-500 cursor-pointer'>{posts[0]?.overviews?.area}</span>
+                        <span className='text-blue-600 font-medium hover:text-orange-500 cursor-pointer'
+                            onClick={(handleFilterLabel)}>
+                            {posts[0]?.labelData?.value}
+
+                        </span>
                     </div>
                     <div className='flex items-center gap-3'>
                         <MdLocationPin size={20} color='#2563eb' />
@@ -139,14 +159,33 @@ const DetailPost = () => {
                                 <FaPhoneAlt size={24} color="white" />
                                 <button className=" text-white">{posts[0]?.user?.phone}</button>
                             </div>
+                            <div className="phone w-[100%] mt-3 justify-center bg-white border rounded-lg  h-[40px] flex gap-3 items-center  ">
+                                <SiZalo size={24} color="blue" />
+                                <a
+                                    href={`https://zalo.me/${posts[0]?.user?.zalo}`}
+                                    target='_blank'
+                                    className="text-black font-semibold"
+                                >{posts[0]?.user?.zalo}</a>
+                            </div>
                             <div className="phone w-[100%] mt-3 justify-center  border rounded-lg  h-[40px] flex gap-3 items-center bg-white ">
                                 <IoCalendarNumberOutline size={24} color="black" />
-                                <button className=" text-black font-semibold">Đặt lịch hẹn</button>
+                                <button className="text-black font-semibold" onClick={openModal}>
+                                    Đặt lịch hẹn
+                                </button>
+
+                                {showModal && (
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close" onClick={closeModal}>&times;</span>
+                                            <Appointment />
+                                        </div>
+                                    </div>
+                                )}
+                                {/* <button className="text-black font-semibold">
+                                    <Link to={`/${path.APPOINTMENT}`}>Đặt lịch hẹn</Link>
+                                </button> */}
                             </div>
-                            <div className="phone w-[100%] mt-3 justify-center  border rounded-lg  h-[40px] flex gap-3 items-center bg-white ">
-                                <GiPayMoney size={24} color="black" />
-                                <button className=" text-black font-semibold">Đặt cọc tiền</button>
-                            </div>
+
                         </div>
                     </div>
                 </div>
