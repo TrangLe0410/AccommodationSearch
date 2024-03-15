@@ -6,6 +6,7 @@ import areaRouter from './area'
 import postRouter from './post'
 import provinceRouter from './province'
 import userRouter from './user'
+
 const initRoutes = (app) => {
     app.use('/api/v1/auth', authRouter)
     app.use('/api/v1/insert', insertRouter)

@@ -40,18 +40,6 @@ export const apiGetNewPosts = () => new Promise(async (resolve, reject) => {
         reject(error)
     }
 })
-export const apigetPostById = (postId) => new Promise(async (resolve, reject) => {
-    try {
-        const response = await axiosConfig({
-            method: 'get',
-            url: `/api/v1/post/${postId}`,
-        });
-        resolve(response);
-    } catch (error) {
-        reject(error);
-    }
-});
-
 
 export const apiUploadImages = (images) => new Promise(async (resolve, reject) => {
     console.log('Request Headers:', axios.defaults.headers);

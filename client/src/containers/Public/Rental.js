@@ -42,7 +42,7 @@ const Rental = () => {
                         <ItemSidebar type='areaCode' isDouble={true} content={areas} title={'Xem theo diện tích'} />
                     </div>
                     <div className="mb-5 w-full p-4 bg-white border border-gray-300 rounded-lg">
-                        <RelatedPost />
+                        <RelatedPost newPost />
                     </div>
                 </div>
             </div>

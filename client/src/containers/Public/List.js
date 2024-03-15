@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Item } from '../../components'
 import { getPosts, getPostsLimit } from '../../store/actions/post'
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,6 +7,7 @@ const List = ({ categoryCode }) => {
     const dispatch = useDispatch()
     const [searchParams] = useSearchParams()
     const { posts } = useSelector(state => state.post)
+    const [sort, setSort] = useState(0)
     useEffect(() => {
         let params = []
         for (let entry of searchParams.entries()) {
@@ -21,8 +22,9 @@ const List = ({ categoryCode }) => {
             }
         })
         if (categoryCode) searchParamsObject.categoryCode = categoryCode
+        if (sort === 1) searchParamsObject.order = ['createdAt', 'DESC']
         dispatch(getPostsLimit(searchParamsObject))
-    }, [searchParams, categoryCode])
+    }, [searchParams, categoryCode, sort])
     // useEffect(() => {
     //     dispatch(getPosts())
     // })
@@ -34,9 +36,10 @@ const List = ({ categoryCode }) => {
             </div>
             <div className='flex items-center gap-2 my-2'>
                 <span className='text-sm'>Sắp xếp: </span>
-                <Button bgColor='bg-gray-200' hover={'hover:bg-gray-300'} text={'Mặc định'} />
-                <Button bgColor='bg-gray-200' hover={'hover:bg-gray-300'} text={'Mới nhất'} />
-                <Button bgColor='bg-gray-200' hover={'hover:bg-gray-300'} text={'Nhiều nhất'} />
+                <span onClick={() => setSort(0)} className={`bg-gray-200 p-2 rounded-md cursor-pointer hover:underline ${sort === 0 && 'underline'}`}>Mặc định</span>
+                <span onClick={() => setSort(1)} className={`bg-gray-200 p-2 rounded-md cursor-pointer hover:underline ${sort === 1 && 'underline'}`}>Mới nhất</span>
+
+
             </div>
             <div className='items'>
                 {posts?.length > 0 && posts.map(item => {

@@ -13,8 +13,16 @@ import { FaRegClock } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoCalendarNumberOutline } from "react-icons/io5";
 import { GiPayMoney } from "react-icons/gi";
+import { SiZalo } from "react-icons/si";
+import { FaCalendarAlt } from "react-icons/fa";
+import { MdDeleteForever } from "react-icons/md";
+import { IoMdCheckmarkCircle } from "react-icons/io";
 const icons = {
     AiOutlinePlusCircle,
+    IoMdCheckmarkCircle,
+    MdDeleteForever,
+    FaCalendarAlt,
+    SiZalo,
     IoCalendarNumberOutline,
     GiPayMoney,
     FaPhoneAlt,

@@ -1,15 +1,16 @@
 import { Routes, Route } from 'react-router-dom';
-import { Blog, Contact, Home, Login, Register, Rental, HomePage, DetailPost, SearchDetail } from './containers/Public';
+import { Blog, Contact, Home, Login, Register, Rental, HomePage, DetailPost, SearchDetail, Appointment } from './containers/Public';
 import { path } from './ultils/constant';
 import * as actions from './store/actions'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { System, CreatePost, ManagePost } from './containers/System';
+import { System, CreatePost, ManagePost, EditAccount, ManageAppointment } from './containers/System';
 function App() {
   const dispatch = useDispatch()
 
 
   useEffect(() => {
+
     dispatch(actions.getPrices())
     dispatch(actions.getAreas())
     dispatch(actions.getProvinces())
@@ -27,14 +28,17 @@ function App() {
           <Route path={path.CHO_THUE_MAT_BANG} element={<Rental />} />
           <Route path={path.TIN_TUC} element={<Blog />} />
           <Route path={path.LIEN_HE} element={<Contact />} />
-          {/* <Route path={'chi-tiet/*'} element={<DetailPost />} /> */}
-          <Route path="chi-tiet/:title/:postId" element={<DetailPost />} />
+          <Route path={path.DETAIL_POST__TITLE__POSTID} element={<DetailPost />} />
+          {/* <Route path={path.DETAIL_ALL} element={<DetailPost />} /> */}
           <Route path={path.SEARCH} element={<SearchDetail />} />
+          <Route path={path.APPOINTMENT} element={<Appointment />} />
         </Route>
 
         <Route path={path.SYSTEM} element={<System />}>
           <Route path={path.CREATE_POST} element={<CreatePost />} />
           <Route path={path.MANAGE_POST} element={<ManagePost />} />
+          <Route path={path.EDIT_ACCOUNT} element={<EditAccount />} />
+          <Route path={path.MANAGE_APPOINTMENT} element={<ManageAppointment />} />
 
         </Route>
 

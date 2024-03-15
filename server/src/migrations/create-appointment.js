@@ -11,14 +11,20 @@ module.exports = {
             userId: {
                 type: Sequelize.STRING
             },
-            roomId: {
+            postId: {
                 type: Sequelize.STRING
             },
-            appointmentTime: {
+            appointmentDate: {
                 type: Sequelize.DATE
             },
+            appointmentTime: {
+                type: Sequelize.TIME
+            },
             status: {
-                type: Sequelize.DATE
+                type: Sequelize.STRING
+            },
+            content: {
+                type: Sequelize.STRING
             },
 
             createdAt: {

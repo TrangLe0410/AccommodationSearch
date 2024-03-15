@@ -15,6 +15,8 @@ const CreatePost = ({ isEdit }) => {
     const dispatch = useDispatch()
 
     const { dataEdit } = useSelector(state => state.post)
+
+
     const [payload, setPayload] = useState(() => {
         const initData = {
             categoryCode: dataEdit?.categoryCode || '',
@@ -67,6 +69,7 @@ const CreatePost = ({ isEdit }) => {
         }))
     }
     const handleSubmit = async () => {
+        const descriptionArray = payload.description.split('\n').filter(item => item.trim() !== "");
         let priceCodeArr = getCodes(+payload.priceNumber / Math.pow(10, 6), prices, 1, 15)
         let priceCode = priceCodeArr[0]?.code
         let areaCodeArr = getCodesArea(+payload.areaNumber, areas, 0, 90)
@@ -80,8 +83,11 @@ const CreatePost = ({ isEdit }) => {
             priceNumber: +payload.priceNumber / Math.pow(10, 6),
             areaNumber: +payload.areaNumber,
             target: payload.target || 'Tất cả',
-            label: `${categories?.find(item => item.code === payload?.categoryCode)?.value} ${payload?.address?.split(',')[0]}`
+            label: `${categories?.find(item => item.code === payload?.categoryCode)?.value} ${payload?.address?.split(',')[0]}`,
+            // description: JSON.stringify(payload.description)
+            description: descriptionArray
         }
+        console.log(finalPayload)
 
         const result = validate(finalPayload, setInvalidFields)
         if (result === 0) {
@@ -127,7 +133,7 @@ const CreatePost = ({ isEdit }) => {
             address: '',
             priceCode: '',
             areaCode: '',
-            description: '',
+            description: [],
             target: '',
             province: ''
         })

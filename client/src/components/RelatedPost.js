@@ -1,21 +1,27 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Sitem } from './index'
 import { useDispatch, useSelector } from 'react-redux'
 import * as actions from '../store/actions'
 
-const RelatedPost = () => {
-    const { newPosts } = useSelector(state => state.post)
+
+const RelatedPost = ({ newPost }) => {
+    const { newPosts, outStandingPost } = useSelector(state => state.post)
     const dispatch = useDispatch()
+    const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        dispatch(actions.getNewPosts())
+        newPost ? dispatch(actions.getNewPosts()) : dispatch(actions.getOutstandingPost())
     }, [])
-    console.log(newPosts)
+
+    useEffect(() => {
+        newPost ? setPosts(newPosts) : setPosts(outStandingPost)
+    }, [newPosts, outStandingPost])
+    console.log(outStandingPost)
     return (
         <div className='w-full bg-white  rounded-md p-4' >
-            <h3 className='font-semibold mb-4 text-xl'>Tin mới đăng</h3>
+            <h3 className='font-semibold mb-4 text-xl'>{newPost ? 'Tin mới đăng' : 'Tin nổi bật'}</h3>
             <div className='w-full  flex flex-col gap-2'>
-                {newPosts?.map(item => {
+                {posts?.map(item => {
                     return (
                         <Sitem
                             key={item.id}
@@ -24,6 +30,7 @@ const RelatedPost = () => {
                             createdAt={item.createdAt}
                             image={JSON.parse(item.images.image)}
                             id={item.id} // Make sure to pass the id
+                            star={item.star}
                         />
                     )
                 })}
