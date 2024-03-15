@@ -2,8 +2,7 @@ import actionTypes from "../actions/actionTypes";
 
 const initialState = {
     appointments: [],
-    loading: false,
-    error: null
+
 };
 
 const appointmentReducer = (state = initialState, action) => {
@@ -11,21 +10,16 @@ const appointmentReducer = (state = initialState, action) => {
         case actionTypes.FETCH_APPOINTMENTS_REQUEST:
             return {
                 ...state,
-                loading: true,
-                error: null
             };
         case actionTypes.FETCH_APPOINTMENTS_SUCCESS:
             return {
                 ...state,
-                loading: false,
+
                 appointments: action.payload,
-                error: null
             };
         case actionTypes.FETCH_APPOINTMENTS_FAILURE:
             return {
                 ...state,
-                loading: false,
-                error: action.error
             };
         default:
             return state;
