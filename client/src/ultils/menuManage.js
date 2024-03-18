@@ -1,6 +1,6 @@
 import icons from './icons'
 
-const { ImPencil2, MdOutlineLibraryBooks, BiUserPin, FaCalendarAlt } = icons
+const { ImPencil2, MdOutlineLibraryBooks, GrSystem, FaCalendarAlt } = icons
 
 const menuManage = [
     {
@@ -21,12 +21,18 @@ const menuManage = [
         path: '/he-thong/quan-ly-lich-hen',
         icon: <FaCalendarAlt />
     },
-    // {
-    //     id: 4,
-    //     text: 'Thông tin tài khoản',
-    //     path: '/he-thong/thong-tin-tai-khoan',
-    //     icon: <BiUserPin />
-    // }
-]
+
+
+];
+const isAdmin = true; // Đây là nơi kiểm tra xem người dùng có phải là admin hay không
+
+if (isAdmin) {
+    menuManage.push({
+        id: 4,
+        text: 'Quản lý hệ thống',
+        path: '/dashboard/quan-ly-he-thong',
+        icon: <GrSystem />
+    });
+}
 
 export default menuManage

@@ -11,7 +11,7 @@ const Login = () => {
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const { isLoggedIn, msg, role } = useSelector(state => state.auth)
+    const { isLoggedIn, msg, update, role } = useSelector(state => state.auth)
 
     const [invalidFields, setInvalidFields] = useState([])
     const [payload, setPayload] = useState({
@@ -26,19 +26,22 @@ const Login = () => {
     }
 
     useEffect(() => {
-        if (isLoggedIn) {
+        if (isLoggedIn && role) { // Kiểm tra isLoggedIn và role
             if (role === 'admin') {
                 navigate('/dashboard') // Điều hướng đến trang dashboard cho admin
-            } else {
+            } else if (role === 'user') {
                 navigate('/*') // Điều hướng đến trang chủ cho user
             }
         }
-    }, [isLoggedIn, role])
-
+    }, [isLoggedIn, role]) // Đảm bảo useEffect re-render khi isLoggedIn và role thay đổi
 
     useEffect(() => {
         msg && Swal.fire('Oops !', msg, 'error')
     }, [msg])
+    useEffect(() => {
+        msg && Swal.fire('Oops !', msg, 'error')
+
+    }, [msg, update])
 
 
 

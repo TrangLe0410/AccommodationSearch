@@ -15,7 +15,7 @@ const authReducer = (state = initState, action) => {
                 ...state,
                 isLoggedIn: true,
                 token,
-                role, // Lưu vai trò của người dùng
+                role,
                 msg: ''
             }
         case actionTypes.LOGIN_FAIL:

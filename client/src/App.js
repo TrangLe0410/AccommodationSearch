@@ -5,7 +5,8 @@ import * as actions from './store/actions'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { System, CreatePost, ManagePost, EditAccount, ManageAppointment } from './containers/System';
-import Dashboard from './containers/Dashboard/Dashboard'
+import { Dashboard } from './containers/Dashboard';
+
 function App() {
   const dispatch = useDispatch()
 
