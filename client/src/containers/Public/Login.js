@@ -11,26 +11,34 @@ const Login = () => {
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const { isLoggedIn, msg, update } = useSelector(state => state.auth)
+    const { isLoggedIn, msg, role } = useSelector(state => state.auth)
 
     const [invalidFields, setInvalidFields] = useState([])
     const [payload, setPayload] = useState({
         phone: '',
         password: ''
     })
+
     const handleSubmit = async () => {
         let invalids = validate(payload, setInvalidFields)
         if (invalids === 0)
             dispatch(actions.login(payload))
     }
+
     useEffect(() => {
-        isLoggedIn && navigate('/*')
-    }, [isLoggedIn])
+        if (isLoggedIn) {
+            if (role === 'admin') {
+                navigate('/dashboard') // Điều hướng đến trang dashboard cho admin
+            } else {
+                navigate('/*') // Điều hướng đến trang chủ cho user
+            }
+        }
+    }, [isLoggedIn, role])
+
 
     useEffect(() => {
         msg && Swal.fire('Oops !', msg, 'error')
-
-    }, [msg, update])
+    }, [msg])
 
 
 

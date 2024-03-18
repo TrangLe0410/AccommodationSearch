@@ -5,6 +5,7 @@ import * as actions from './store/actions'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { System, CreatePost, ManagePost, EditAccount, ManageAppointment } from './containers/System';
+import Dashboard from './containers/Dashboard/Dashboard'
 function App() {
   const dispatch = useDispatch()
 
@@ -39,6 +40,10 @@ function App() {
           <Route path={path.MANAGE_POST} element={<ManagePost />} />
           <Route path={path.EDIT_ACCOUNT} element={<EditAccount />} />
           <Route path={path.MANAGE_APPOINTMENT} element={<ManageAppointment />} />
+
+        </Route>
+
+        <Route path={path.DASHBOARD} element={<Dashboard />}>
 
         </Route>
 

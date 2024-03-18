@@ -37,14 +37,34 @@ export const loginService = ({ phone, password }) => new Promise(async (resolve,
             raw: true
         })
         const isCorrectPassword = response && bcrypt.compareSync(password, response.password)
-        const token = isCorrectPassword && jwt.sign({ id: response.id, phone: response.phone }, process.env.SECRET_KEY, { expiresIn: '2d' })
+        if (!isCorrectPassword) {
+            return resolve({
+                err: 2,
+                msg: 'Password is wrong!',
+                token: null
+            })
+        }
+        const token = jwt.sign({ id: response.id, phone: response.phone }, process.env.SECRET_KEY, { expiresIn: '2d' })
         resolve({
-            err: token ? 0 : 2,
-            msg: token ? 'Login is successfully !' : response ? 'Password is wrong !' : 'Phone number not found !',
-            token: token || null
+            err: 0,
+            msg: 'Login is successfully!',
+            token: token
         })
 
     } catch (error) {
         reject(error)
     }
 })
+
+export const getUserRole = (userId) => new Promise(async (resolve, reject) => {
+    try {
+        const userData = await db.User.findOne({
+            where: { id: userId },
+            attributes: ['role'], // Lấy trường role từ cơ sở dữ liệu
+            raw: true
+        });
+        resolve(userData.role);
+    } catch (error) {
+        reject(error);
+    }
+});
