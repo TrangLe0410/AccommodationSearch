@@ -22,6 +22,10 @@ export const path = {
     EDIT_ACCOUNT: 'sua-thong-tin-ca-nhan',
     MANAGE_APPOINTMENT: 'quan-ly-lich-hen',
 
+    DASHBOARD: '/dashboard/*',
+    MANAGE_ALL_POST: 'tat-ca-bai-dang',
+    MANAGE_ALL_USER: 'quan-ly-nguoi-dung'
+
 
 }
 export const text = {

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Button } from '../../components';
 import icons from '../../ultils/icons';
 import * as actions from '../../store/actions';
 import { useDispatch, useSelector } from 'react-redux';

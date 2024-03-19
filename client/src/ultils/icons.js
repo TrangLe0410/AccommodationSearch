@@ -17,8 +17,12 @@ import { SiZalo } from "react-icons/si";
 import { FaCalendarAlt } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
 import { IoMdCheckmarkCircle } from "react-icons/io";
+import { MdManageAccounts } from "react-icons/md";
+import { GrSystem } from "react-icons/gr";
 const icons = {
     AiOutlinePlusCircle,
+    GrSystem,
+    MdManageAccounts,
     IoMdCheckmarkCircle,
     MdDeleteForever,
     FaCalendarAlt,

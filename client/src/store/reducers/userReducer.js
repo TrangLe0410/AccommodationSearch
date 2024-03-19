@@ -1,7 +1,8 @@
 import actionTypes from "../actions/actionTypes";
 
 const initState = {
-    currentData: {}
+    currentData: {},
+    users: [],
 }
 
 const userReducer = (state = initState, action) => {
@@ -15,6 +16,12 @@ const userReducer = (state = initState, action) => {
             return {
                 ...state,
                 currentData: {}
+            }
+        case actionTypes.GET_ALL_USER:
+            return {
+                ...state,
+                users: action.users || [],
+                msg: action.msg || '',
             }
 
 

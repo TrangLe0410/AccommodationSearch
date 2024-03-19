@@ -13,6 +13,8 @@ export const getPostsService = () => new Promise(async (resolve, reject) => {
                 { model: db.Image, as: 'images', attributes: ['image'] },
                 { model: db.Attribute, as: 'attributes', attributes: ['price', 'acreage', 'published', 'hashtag'] },
                 { model: db.User, as: 'user', attributes: ['name', 'zalo', 'phone'] },
+                { model: db.Overview, as: 'overviews' },
+                { model: db.Label, as: 'labelData', attributes: { exclude: ['createdAt', 'updateAt'] } },
             ],
             attributes: ['id', 'title', 'star', 'address', 'description']
         })

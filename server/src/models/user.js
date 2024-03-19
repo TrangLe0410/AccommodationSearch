@@ -22,7 +22,12 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     avatar: DataTypes.BLOB,
     fbUrl: DataTypes.STRING,
-    zalo: DataTypes.STRING
+    zalo: DataTypes.STRING,
+    role: {
+      type: DataTypes.ENUM('admin', 'user', 'moderator'), // Thay đổi giá trị ENUM tùy theo nhu cầu của bạn
+      allowNull: false,
+      defaultValue: 'user' // Giá trị mặc định là 'user'
+    }
   }, {
     sequelize,
     modelName: 'User',

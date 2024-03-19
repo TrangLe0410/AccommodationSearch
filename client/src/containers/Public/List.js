@@ -28,6 +28,7 @@ const List = ({ categoryCode }) => {
     // useEffect(() => {
     //     dispatch(getPosts())
     // })
+
     return (
         <div className='w-full bg-white shadow-sm rounded-md border border-gray-300 p-8 items-start'>
             <div className='flex items-center justify-between'>

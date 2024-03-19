@@ -23,13 +23,15 @@ export const register = (payload) => async (dispatch) => {
     }
 };
 
+
 export const login = (payload) => async (dispatch) => {
     try {
         const response = await apiLogin(payload)
         if (response?.data.err === 0) {
+            const { token, role } = response.data
             dispatch({
                 type: actionTypes.LOGIN_SUCCESS,
-                data: response.data.token
+                data: { token, role }
             })
         } else {
             dispatch({
@@ -45,8 +47,6 @@ export const login = (payload) => async (dispatch) => {
         })
 
     }
-
-
 }
 
 export const logout = () => ({

@@ -86,44 +86,45 @@ const Header = () => {
                                                     </NavLink>
                                                 </li>
                                                 <li className="relative group">
-                                                    <NavLink to={path.CHO_THUE_PHONG_TRO}
+
+                                                    <Link to="/cho-thue-phong-tro"
                                                         className="ud-menu-scroll text-base text-dark lg:text-[#090E34] lg:group-hover:opacity-70 lg:group-hover:text-[#3056D3]
                                                         group-hover:text-primary py-2 lg:py-6 lg:inline-flex lg:px-0 flex mx-8 lg:mr-0 lg:ml-7 xl:ml-12"
                                                     >
                                                         Phòng Trọ
-                                                    </NavLink>
+                                                    </Link>
                                                 </li>
                                                 <li className="relative group">
-                                                    <NavLink to={path.NHA_CHO_THUE}
+                                                    <Link to="/nha-cho-thue"
                                                         className="ud-menu-scroll text-base text-dark lg:text-[#090E34] lg:group-hover:opacity-70 lg:group-hover:text-[#3056D3]
                                                         group-hover:text-primary py-2 lg:py-6 lg:inline-flex lg:px-0 flex mx-8 lg:mr-0 lg:ml-7 xl:ml-12"
                                                     >
                                                         Nhà cho thuê
-                                                    </NavLink>
+                                                    </Link>
                                                 </li>
                                                 <li className="relative group">
-                                                    <NavLink to={path.CHO_THUE_CAN_HO}
+                                                    <Link to="/cho-thue-can-ho"
                                                         className="ud-menu-scroll text-base text-dark lg:text-[#090E34] lg:group-hover:opacity-70 lg:group-hover:text-[#3056D3]
                                                         group-hover:text-primary py-2 lg:py-6 lg:inline-flex lg:px-0 flex mx-8 lg:mr-0 lg:ml-7 xl:ml-12"
                                                     >
                                                         Căn Hộ
-                                                    </NavLink>
+                                                    </Link>
                                                 </li>
                                                 <li className="relative group">
-                                                    <NavLink to={path.TIN_TUC}
+                                                    <Link to="/tin-tuc"
                                                         className="ud-menu-scroll text-base text-dark lg:text-[#090E34] lg:group-hover:opacity-70 lg:group-hover:text-[#3056D3]
                                                         group-hover:text-primary py-2 lg:py-6 lg:inline-flex lg:px-0 flex mx-8 lg:mr-0 lg:ml-7 xl:ml-12"
                                                     >
                                                         Tin tức
-                                                    </NavLink>
+                                                    </Link>
                                                 </li>
                                                 <li className="relative group">
-                                                    <NavLink to={path.LIEN_HE}
+                                                    <Link to="/lien-he"
                                                         className="ud-menu-scroll text-base text-dark lg:text-[#090E34] lg:group-hover:opacity-70 lg:group-hover:text-[#3056D3]
                                                         group-hover:text-primary py-2 lg:py-6 lg:inline-flex lg:px-0 flex mx-8 lg:mr-0 lg:ml-7 xl:ml-12"
                                                     >
                                                         Liên hệ
-                                                    </NavLink>
+                                                    </Link>
                                                 </li>
 
                                             </ul>
