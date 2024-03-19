@@ -12,13 +12,13 @@ const memuSidebar = [
     {
         id: 2,
         text: 'Quản lý tin đăng',
-        path: '/dashboard/quan-ly-bai-dang',
+        path: '/dashboard/tat-ca-bai-dang',
         icon: <MdOutlineLibraryBooks />
     },
     {
         id: 3,
         text: 'Quản lý người dùng',
-        path: '/dashboard/quan-ly-lich-hen',
+        path: '/dashboard/quan-ly-nguoi-dung',
         icon: <MdManageAccounts />
     },
 

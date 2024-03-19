@@ -27,3 +27,26 @@ export const getCurrent = () => async (dispatch) => {
         dispatch({ type: actionTypes.LOGOUT })
     }
 }
+
+export const getAllUser = () => async (dispatch) => {
+    try {
+        const response = await apis.apiGetAllUser()
+        if (response?.data.err === 0) {
+            dispatch({
+                type: actionTypes.GET_ALL_USER,
+                users: response.data.response
+            })
+        } else {
+            dispatch({
+                type: actionTypes.GET_ALL_USER,
+                msg: response.data.msg,
+                users: null
+            })
+        }
+    } catch (error) {
+        dispatch({
+            type: actionTypes.GET_ALL_USER,
+            categories: null
+        })
+    }
+}

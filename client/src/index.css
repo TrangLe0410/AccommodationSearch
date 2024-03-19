@@ -12,6 +12,36 @@ input[type="range"]::-webkit-slider-runnable-track {
     height: 5px;
 }
 
+.bg-black {
+    --tw-bg-opacity: 1;
+    background-color: rgb(28 36 52 / var(--tw-bg-opacity));
+}
+
+.text-bodydark1 {
+    --tw-text-opacity: 1;
+    color: rgb(222 228 238 / var(--tw-text-opacity));
+}
+
+.hover\:bg-graydark:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(51 58 72 / var(--tw-bg-opacity));
+}
+
+.bg-hover {
+    background-color: rgb(51 58 72 / var(--tw-bg-opacity));
+}
+
+
+.bg-color {
+    background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+
+}
+
+.text-bodydark2 {
+    --tw-text-opacity: 1;
+    color: rgb(138 153 175 / var(--tw-text-opacity));
+}
+
 input[type="range"]::-moz-range-track {
     -moz-appearance: none;
     height: 5px;
