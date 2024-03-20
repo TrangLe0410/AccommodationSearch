@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getPostsLimit } from '../../store/actions'
 import { UseSelector } from 'react-redux'
-import { SliderPost } from '../../components'
+import { Comment, SliderPost } from '../../components'
 import icons from '../../ultils/icons'
 import objToArr from '../../ultils/Common/objToArr'
 import { useNavigate, createSearchParams } from 'react-router-dom'
@@ -145,6 +145,12 @@ const DetailPost = () => {
                             alt="location"></img>
                     </div>
 
+
+                </div>
+                <div className='mt-8'>
+                    <h3 className='font-semibold text-xl my-4'> Bình luận</h3>
+
+                    <Comment />
 
                 </div>
             </div>
