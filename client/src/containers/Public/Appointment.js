@@ -6,11 +6,13 @@ import { useParams } from 'react-router-dom';
 import Swal from 'sweetalert2'
 const Appointment = () => {
     const { postId } = useParams();
+    const { posts } = useSelector(state => state.post)
     const { currentData } = useSelector(state => state.user);
     const dispatch = useDispatch();
+    const currentPost = posts.find(post => post.id === postId);
     const [formData, setFormData] = useState({
-        name: currentData?.name || '',
-        phone: currentData?.phone || '',
+        name: currentPost?.user?.name || '', // Sử dụng tên của người đăng bài
+        phone: currentPost?.user?.phone || '',
         appointmentDate: '',
         appointmentTime: '',
         content: '',
@@ -28,7 +30,7 @@ const Appointment = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!formData.postId || !formData.appointmentDate || !formData.appointmentTime || !formData.content) {
+        if (!formData.postId || !formData.name || !formData.phone || !formData.appointmentDate || !formData.appointmentTime || !formData.content) {
             Swal.fire({
                 icon: 'error',
                 title: 'Vui lòng điền đầy đủ thông tin',
@@ -43,9 +45,9 @@ const Appointment = () => {
             });
             // Reset form fields if needed
             setFormData({
-                name: currentData?.name || '',
+                name: currentPost?.user?.name || '',
                 postId: '',
-                phone: currentData?.phone || '',
+                phone: currentPost?.user?.phone || '',
                 appointmentDate: '',
                 appointmentTime: '',
                 content: ''
@@ -68,7 +70,7 @@ const Appointment = () => {
                         <div className="mb-5 grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div className="flex flex-col">
                                 <input
-                                    value={formData.name}
+                                    value={posts[0]?.user?.name}
                                     onChange={handleChange}
                                     type="text"
                                     name="name"
@@ -79,7 +81,7 @@ const Appointment = () => {
                             </div>
                             <div className="flex flex-col">
                                 <input
-                                    value={currentData?.phone}
+                                    value={posts[0]?.user?.phone}
                                     type="text"
                                     name="phone"
                                     id="phone"

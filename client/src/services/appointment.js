@@ -27,3 +27,15 @@ export const getAppointmentsByUserId = (userId) => new Promise(async (resolve, r
         reject(error);
     }
 });
+export const deleteAppointment = (appointmentId) => new Promise(async (resolve, reject) => {
+    try {
+        const response = await axiosConfig({
+            method: 'delete',
+            url: `/api/v1/appointment/delete-appointment`,
+            params: { appointmentId: appointmentId }
+        });
+        resolve(response);
+    } catch (error) {
+        reject(error);
+    }
+});

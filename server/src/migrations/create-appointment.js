@@ -14,6 +14,12 @@ module.exports = {
             postId: {
                 type: Sequelize.STRING
             },
+            name: {
+                type: Sequelize.STRING
+            },
+            phone: {
+                type: Sequelize.STRING
+            },
             appointmentDate: {
                 type: Sequelize.DATE
             },

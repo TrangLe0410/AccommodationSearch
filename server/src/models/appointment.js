@@ -17,10 +17,13 @@ module.exports = (sequelize, DataTypes) => {
     Appointment.init({
         userId: DataTypes.STRING,
         postId: DataTypes.STRING,
+        name: DataTypes.STRING,
+        phone: DataTypes.STRING,
         appointmentDate: DataTypes.DATE,
         appointmentTime: DataTypes.TIME,
         content: DataTypes.STRING,
         status: DataTypes.STRING,
+
 
     }, {
         sequelize,
