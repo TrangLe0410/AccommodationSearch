@@ -34,3 +34,16 @@ export const getUserService = () => new Promise(async (resolve, reject) => {
         reject(error)
     }
 })
+export const getUserById = async (userId) => {
+    try {
+        const user = await db.User.findOne({
+            where: {
+                id: userId
+            }
+        });
+        return user;
+    } catch (error) {
+        throw error;
+    }
+};
+
