@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
             Post.belongsTo(models.User, { foreignKey: 'userId', targetKey: 'id', as: 'user' })
             Post.belongsTo(models.Label, { foreignKey: 'labelCode', targetKey: 'code', as: 'labelData' })
             Post.belongsTo(models.Appointment, { foreignKey: 'appointmentId', targetKey: 'id', as: 'appointments' })
-
+            Post.belongsTo(models.Comment, { foreignKey: 'commentId', targetKey: 'id', as: 'comments' })
         }
     }
     Post.init({

@@ -5,8 +5,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchAppointments, getCurrent } from '../../store/actions';
 import { Link } from 'react-router-dom'; // Import thêm Link từ react-router-dom
 import { formatVietnameseToString } from '../../ultils/Common/formatVietnameseToString';
-
+import Swal from 'sweetalert2';
 import { path } from '../../ultils/constant';
+import { deleteAppointment } from '../../services/appointment'; // Import hàm xóa lịch hẹn từ service
 
 const { MdDeleteForever, IoMdCheckmarkCircle } = icons;
 
@@ -22,9 +23,39 @@ const ManageAppointment = () => {
             dispatch(fetchAppointments(userId));
         }
     }, [currentData?.id, dispatch]);
+
     useEffect(() => {
-        dispatch(actions.getPosts())
-    }, [])
+        dispatch(actions.getPosts());
+    }, []);
+
+    const handleDeleteAppointment = async (appointmentId) => {
+        // Sử dụng SweetAlert2 để hỏi người dùng chắc chắn muốn xóa không
+        const result = await Swal.fire({
+            title: 'Bạn chắc chắn muốn xóa lịch hẹn?',
+            text: 'Hành động này sẽ không thể hoàn tác!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Có!',
+            cancelButtonText: 'Không'
+        });
+
+        if (result.isConfirmed) {
+            try {
+                await deleteAppointment(appointmentId);
+                // Refresh danh sách lịch hẹn sau khi xóa thành công
+                const userId = currentData?.id;
+                if (userId) {
+                    dispatch(fetchAppointments(userId));
+                }
+                Swal.fire('Thành công', 'Xóa lịch hẹn thành công', 'success');
+            } catch (error) {
+                console.error('Failed to delete appointment:', error);
+                Swal.fire('Oops!', 'Xóa lịch hẹn thất bại', 'error');
+            }
+        }
+    };
+
+
 
     return (
         <div className='flex flex-col gap-6'>
@@ -36,8 +67,8 @@ const ManageAppointment = () => {
                     <tr className='flex w-full'>
                         {/* <th className='border flex-1 p-2'>Mã lịch</th> */}
                         <th className='border flex-1 p-2'>Tên bài đăng</th>
-                        <th className='border flex-1 p-2'>Số điện thoại</th>
-                        <th className='border flex-1 p-2'>Tên người hẹn</th>
+                        <th className='border flex-1 p-2'>SĐT chủ phòng</th>
+                        <th className='border flex-1 p-2'>Tên chủ phòng</th>
                         <th className='border flex-1 p-2'>Ngày hẹn</th>
                         <th className='border flex-1 p-2'>Thời gian hẹn</th>
                         <th className='border flex-1 p-2'>Nội dung</th>
@@ -59,8 +90,8 @@ const ManageAppointment = () => {
                                             {title?.slice(0, 40)}
                                         </Link>
                                     </td>
-                                    <td className='border px-2 flex-1 h-full text-center'>{currentData?.phone}</td>
-                                    <td className='border px-2 flex-1 h-full text-center'>{currentData?.name}</td>
+                                    <td className='border px-2 flex-1 h-full text-center'>{item?.name}</td>
+                                    <td className='border px-2 flex-1 h-full text-center'>{item?.phone}</td>
                                     <td className='border px-2 flex-1 h-full text-center'>{item?.appointmentDate && new Date(item.appointmentDate).toLocaleDateString()}</td>
                                     <td className='border px-2 flex-1 h-full text-center'>{item?.appointmentTime}</td>
                                     <td className='border px-2 flex-1 h-full text-center'>{item?.content?.slice(0, 40)}</td>
@@ -75,6 +106,7 @@ const ManageAppointment = () => {
                                             color='red'
                                             size={32}
                                             style={{ cursor: 'pointer' }}
+                                            onClick={() => handleDeleteAppointment(item?.id)}
                                         />
                                     </td>
                                 </tr>
@@ -82,7 +114,7 @@ const ManageAppointment = () => {
                         })
                     ) : (
                         <tr>
-                            <td colSpan="8" className="text-center">No appointments found</td>
+                            <td colSpan="8" className="text-center">Không có lịch hẹn nào!</td>
                         </tr>
                     )}
                 </tbody>

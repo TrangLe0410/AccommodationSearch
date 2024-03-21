@@ -6,4 +6,5 @@ const router = express.Router()
 router.use(verifyToken)
 router.post('/create-appointment', appointmentController.createNewAppointment);
 router.get('/get-appointments/:userId', appointmentController.getAppointmentsByUserId);
+router.delete('/delete-appointment', appointmentController.deleteAppointment)
 export default router

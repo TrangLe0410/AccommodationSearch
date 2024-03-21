@@ -294,3 +294,16 @@ export const deletePost = (postId) => new Promise(async (resolve, reject) => {
         reject(error)
     }
 })
+
+export const getPostById = async (postId) => {
+    try {
+        const post = await db.Post.findOne({
+            where: {
+                id: postId
+            }
+        });
+        return post;
+    } catch (error) {
+        throw error;
+    }
+};

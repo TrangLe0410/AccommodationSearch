@@ -24,7 +24,8 @@ export const path = {
 
     DASHBOARD: '/dashboard/*',
     MANAGE_ALL_POST: 'tat-ca-bai-dang',
-    MANAGE_ALL_USER: 'quan-ly-nguoi-dung'
+    MANAGE_ALL_USER: 'quan-ly-nguoi-dung',
+    MANAGE_SYSTEM: 'quan-ly-he-thong'
 
 
 }

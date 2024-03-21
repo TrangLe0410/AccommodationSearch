@@ -28,7 +28,7 @@ const Login = () => {
     useEffect(() => {
         if (isLoggedIn && role) { // Kiểm tra isLoggedIn và role
             if (role === 'admin') {
-                navigate('/dashboard') // Điều hướng đến trang dashboard cho admin
+                navigate('/dashboard/quan-ly-he-thong') // Điều hướng đến trang dashboard cho admin
             } else if (role === 'user') {
                 navigate('/*') // Điều hướng đến trang chủ cho user
             }
